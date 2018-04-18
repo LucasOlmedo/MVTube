@@ -1,6 +1,15 @@
 {
   "HOME_PAGE": {
-    "PAGE_TITLE": "Página Inicial"
+    "PAGE_TITLE": "Página Inicial",
+    "MOVIES": {
+      "TITLE": "Filmes"
+    },
+    "TV_SHOWS": {
+      "TITLE": "Séries"
+    },
+    "ANIMES": {
+      "TITLE": "Animes"
+    }
   },
   "SETTINGS_PAGE": {
     "PAGE_TITLE": "Configuração",

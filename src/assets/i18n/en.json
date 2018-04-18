@@ -1,6 +1,15 @@
 {
   "HOME_PAGE": {
-    "PAGE_TITLE": "Home"
+    "PAGE_TITLE": "Home",
+    "MOVIES": {
+      "TITLE": "Movies"
+    },
+    "TV_SHOWS": {
+      "TITLE": "TV Shows"
+    },
+    "ANIMES": {
+      "TITLE": "Animes"
+    }
   },
   "SETTINGS_PAGE": {
     "PAGE_TITLE": "Settings",

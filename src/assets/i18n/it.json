@@ -1,6 +1,15 @@
 {
   "HOME_PAGE": {
-    "PAGE_TITLE": "Schermata Iniziale"
+    "PAGE_TITLE": "Schermata Iniziale",
+    "MOVIES": {
+      "TITLE": "Film"
+    },
+    "TV_SHOWS": {
+      "TITLE": "Spettacoli TV"
+    },
+    "ANIMES": {
+      "TITLE": "Anime"
+    }
   },
   "SETTINGS_PAGE": {
     "PAGE_TITLE": "Impostazioni",
