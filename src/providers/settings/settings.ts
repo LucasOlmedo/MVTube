@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/Rx';
 import { Storage } from '@ionic/storage';
@@ -6,10 +5,9 @@ import { Storage } from '@ionic/storage';
 @Injectable()
 export class SettingsProvider {
 
-  private theme: BehaviorSubject<String> = new BehaviorSubject('default-theme');
+  private theme: BehaviorSubject<String> = new BehaviorSubject('light-theme');
 
   constructor(
-    private http: HttpClient,
     private storage: Storage
   ) {
     this.initSetting();
@@ -20,7 +18,7 @@ export class SettingsProvider {
       .then(value => {
         value != null
           ? this.theme.next(value)
-          : this.storage.set('theme', 'default-theme');
+          : this.storage.set('theme', 'light-theme');
       });
   }
 

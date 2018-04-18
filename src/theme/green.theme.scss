@@ -1,0 +1,17 @@
+.green-theme {
+  .toolbar-title {
+    color: #fff;
+  }
+  
+  .toolbar-background {
+    background-color: color($colors, 'secondary');
+  }
+
+  .bar-button-menutoggle {
+    color: white;
+  }
+
+  .green-selected {
+    box-shadow: 0 0 8px 1px rgb(0, 140, 255); 
+  }
+}

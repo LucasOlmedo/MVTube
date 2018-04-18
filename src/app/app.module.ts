@@ -10,11 +10,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { SettingsProvider } from '../providers/settings/settings';
 
 import { IonicStorageModule } from "@ionic/storage";
+import { SettingsPage } from '../pages/settings/settings';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
+    SettingsPage
   ],
   imports: [
     BrowserModule,
@@ -25,6 +27,7 @@ import { IonicStorageModule } from "@ionic/storage";
   entryComponents: [
     MyApp,
     HomePage,
+    SettingsPage
   ],
   providers: [
     StatusBar,

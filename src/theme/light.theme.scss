@@ -1,0 +1,13 @@
+.light-theme {
+  ion-content {
+    background-color: #fff;
+  }
+  
+  .toolbar-background {
+    background-color: color($colors, 'light');
+  }
+  
+  .light-selected {
+    box-shadow: 0 0 8px 1px rgb(0, 140, 255);
+  }
+}

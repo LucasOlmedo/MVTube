@@ -1,0 +1,32 @@
+.dark-theme {
+  ion-content {
+    background-color: #2b2b2b;
+    color: #fff;
+  }
+
+  ion-item-divider {
+    background-color: #2b2b2b;
+    color: #fff;
+  }
+
+  ion-list .item {
+    background-color: #2b2b2b;
+    color: white;
+  }
+  
+  .toolbar-title {
+    color: #fff;
+  }
+  
+  .toolbar-background {
+    background-color: color($colors, 'dark');
+  }
+
+  .bar-button-menutoggle {
+    color: white;
+  }
+
+  .dark-selected {
+    box-shadow: 0 0 8px 1px rgb(0, 140, 255); 
+  }
+}
