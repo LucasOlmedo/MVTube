@@ -3,14 +3,18 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Settings</ion-title>
+    <ion-title>
+      {{'SETTINGS_PAGE.PAGE_TITLE' | translate}}
+    </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <ion-item-group inset>
     <ion-item-divider>
-      <span text-uppercase>theme</span>
+      <span text-uppercase>
+        {{'SETTINGS_PAGE.THEME_TITLE' | translate}}
+      </span>
     </ion-item-divider>
     <br>
     <button ion-button class="light-selected" color="light" (click)="setSetting('light-theme')">
@@ -28,5 +32,25 @@
     <button ion-button class="red-selected" color="danger" (click)="setSetting('red-theme')">
       red
     </button>
+  </ion-item-group>
+  <br>
+  <br>
+  <ion-item-group inset>
+    <ion-item-divider>
+      <span text-uppercase>
+        {{'SETTINGS_PAGE.LANG_TITLE' | translate}}
+      </span>
+    </ion-item-divider>
+    <br>
+    <ion-item>
+      <ion-label>
+        {{'SETTINGS_PAGE.LANG_CHOOSE' | translate}}
+      </ion-label>
+      <ion-select [(ngModel)]="selectedLang" (ngModelChange)="applyLanguage($event)">
+        <ion-option *ngFor="let lang of languages" [value]="lang.code" [selected]="lang.code == selectedLang">
+          {{lang.name}}
+        </ion-option>
+      </ion-select>
+    </ion-item>
   </ion-item-group>
 </ion-content>

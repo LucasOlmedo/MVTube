@@ -1,0 +1,12 @@
+{
+  "HOME_PAGE": {
+    "PAGE_TITLE": "Schermata Iniziale"
+  },
+  "SETTINGS_PAGE": {
+    "PAGE_TITLE": "Impostazioni",
+    "THEME_TITLE": "Tema",
+    "THEME_CHANGE": "Tema cambiato!",
+    "LANG_TITLE": "Lingua",
+    "LANG_CHOOSE": "Scegline uno"
+  }
+}

@@ -6,6 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { SettingsProvider } from '../providers/settings/settings';
 import { SettingsPage } from '../pages/settings/settings';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   templateUrl: 'app.html'
@@ -16,24 +17,27 @@ export class MyApp {
   rootPage: any = HomePage;
   pages: Array<{ title: string, component: any }>;
   selectedTheme: String;
+  selectedLang: any;
 
   constructor(
     public platform: Platform,
     public statusBar: StatusBar,
     public splashScreen: SplashScreen,
-    private settings: SettingsProvider
+    private settingsProvider: SettingsProvider,
+    private translate: TranslateService
   ) {
     this.initializeApp();
 
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'Settings', component: SettingsPage },
+      { title: 'HOME_PAGE', component: HomePage },
+      { title: 'SETTINGS_PAGE', component: SettingsPage },
     ];
 
   }
 
   initializeApp() {
-    this.initializeSettings();
+    this.initLang();
+    this.initSettings();
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
@@ -44,8 +48,20 @@ export class MyApp {
     this.nav.setRoot(page.component);
   }
 
-  private initializeSettings() {
-    this.settings.getActiveTheme()
+  private initSettings() {
+    this.settingsProvider.getActiveTheme()
       .subscribe(theme => this.selectedTheme = theme);
   }
+
+  private initLang() {
+    this.settingsProvider.getActiveLang()
+      .then(lang => {
+        lang != null
+          ? this.selectedLang = lang
+          : this.selectedLang = this.settingsProvider.language;
+
+        this.translate.use(this.selectedLang);
+      });
+  }
+
 }

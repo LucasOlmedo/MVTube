@@ -1,0 +1,12 @@
+{
+  "HOME_PAGE": {
+    "PAGE_TITLE": "Startseite"
+  },
+  "SETTINGS_PAGE": {
+    "PAGE_TITLE": "Einstellungen",
+    "THEME_TITLE": "Theme",
+    "THEME_CHANGE": "Theme geändert!",
+    "LANG_TITLE": "Sprache",
+    "LANG_CHOOSE": "Wähle ein"
+  }
+}
