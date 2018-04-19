@@ -1,4 +1,5 @@
 {
+  "APP_DEVELOPED_BY": "Developed by {{value}}",
   "HOME_PAGE": {
     "PAGE_TITLE": "Home",
     "MOVIES": {
@@ -17,5 +18,11 @@
     "THEME_CHANGE": "Theme changed!",
     "LANG_TITLE": "Language",
     "LANG_CHOOSE": "Choose one"
+  },
+  "ABOUT_PAGE": {
+    "BUTTON_STATUS": "API Status",
+    "API_DESCRIPTION": "API by https://popcorntime.sh",
+    "PAGE_TITLE": "About",
+    "VERSION_TITLE": "Version {{value}}"
   }
 }

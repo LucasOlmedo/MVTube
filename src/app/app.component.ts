@@ -7,6 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { SettingsProvider } from '../providers/settings/settings';
 import { SettingsPage } from '../pages/settings/settings';
 import { TranslateService } from '@ngx-translate/core';
+import { AboutPage } from '../pages/about/about';
 
 @Component({
   templateUrl: 'app.html'
@@ -31,6 +32,7 @@ export class MyApp {
     this.pages = [
       { title: 'HOME_PAGE', component: HomePage },
       { title: 'SETTINGS_PAGE', component: SettingsPage },
+      { title: 'ABOUT_PAGE', component: AboutPage },
     ];
 
   }

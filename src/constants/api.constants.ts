@@ -1,0 +1,1 @@
+export const API_URL = 'https://tv-v2.api-fetch.website/';

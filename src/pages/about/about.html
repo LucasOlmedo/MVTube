@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      {{'ABOUT_PAGE.PAGE_TITLE' | translate}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item-group inset>
+    <div class="img-logo" text-center>
+      <img src="assets/imgs/mvtube.png" width="150" alt="">
+    </div>
+    <ion-item class="about-item">
+      <small>
+        {{'APP_DEVELOPED_BY' | translate : developer}}
+      </small>
+    </ion-item>
+    <ion-item class="about-item">
+      <small>
+        {{'ABOUT_PAGE.VERSION_TITLE' | translate : appVersion}}
+      </small>
+    </ion-item>
+    <ion-item class="about-item">
+      <small>
+        {{'ABOUT_PAGE.API_DESCRIPTION' | translate}}
+      </small>
+    </ion-item>
+  </ion-item-group>
+</ion-content>
