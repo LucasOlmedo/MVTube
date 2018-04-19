@@ -12,6 +12,7 @@ export class MoviesPage {
 
   movies: any;
   singleMovie: any;
+  page: number;
 
   constructor(
     public navCtrl: NavController,
@@ -19,6 +20,7 @@ export class MoviesPage {
     private apiProvider: PopcornApiProvider
   ) {
     this.movies = navParams.get('movies');
+    this.page = 1;
   }
 
   getMovieDetails(id) {
@@ -29,6 +31,19 @@ export class MoviesPage {
           movie: this.singleMovie
         });
       });
+  }
+
+  doInfinite($scroll) {
+    setTimeout(() => {
+    //   this.apiProvider.getMovies(this.page)
+    //     .subscribe(response => {
+    //       for (let index = 0; index < response.length; index++) {
+    //         let element = response[index];
+    //         this.movies.push(element);
+    //       }
+          $scroll.complete();
+    //     })
+    }, 700);
   }
 
 }
