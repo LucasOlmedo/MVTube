@@ -15,7 +15,19 @@ export class PopcornApiProvider {
   }
 
   public getMovies() {
-    
+    return this.http.get(this.url + 'movies/1');
+  }
+
+  public movieDetail(id) {
+    return this.http.get(this.url + 'movie/' + id);
+  }
+
+  public getTvShows() {
+    return this.http.get(this.url + 'shows/1');
+  }
+
+  public getAnimes() {
+    return this.http.get(this.url + 'animes/1');
   }
 
 }

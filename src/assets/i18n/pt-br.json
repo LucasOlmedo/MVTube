@@ -17,12 +17,19 @@
     "THEME_TITLE": "Tema",
     "THEME_CHANGE": "Tema alterado!",
     "LANG_TITLE": "Idioma",
-    "LANG_CHOOSE": "Escolha uma"
+    "LANG_CHOOSE": "Escolha um"
   },
   "ABOUT_PAGE": {
     "BUTTON_STATUS": "Status da API",
     "API_DESCRIPTION": "API por https://popcorntime.sh",
     "PAGE_TITLE": "Sobre",
     "VERSION_TITLE": "Versão {{value}}"
+  },
+  "MOVIES_PAGE": {
+    "PAGE_TITLE": "Filmes"
+  },
+  "MOVIE_DETAILS_PAGE": {
+    "TRAILER": "Trailer",
+    "PLAY": "Assistir agora"
   }
 }

@@ -7,12 +7,29 @@
     background-color: color($colors, 'primary');
   }
 
+  .toolbar button {
+    color: white;
+  }
+
   .bar-button-menutoggle {
     color: white;
   }
 
   .blue-selected {
     box-shadow: 0 0 8px 1px rgb(0, 140, 255); 
+  }
+
+  .icon-theme {
+    color: color($colors, 'primary');
+  }
+
+  .button-theme {
+    background-color: color($colors, 'primary');
+    color: white;
+  }
+
+  .button-theme.activated {
+    background-color: color($colors, 'primary');
   }
 
   ion-card {

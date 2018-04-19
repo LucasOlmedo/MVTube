@@ -18,6 +18,22 @@
     background: rgb(15, 15, 15);
   }
 
+  small {
+    color: darkgray;
+  }
+
+  .icon-theme {
+    color: darkgray;
+  }
+
+  .button-theme {
+    background-color: color($colors, 'light');
+    color: #424242;
+  }
+  .button-theme.activated {
+    background-color: color($colors, 'light');
+  }
+
   .item-select {
     background-color: #2b2b2b;
     color: white;
@@ -31,6 +47,10 @@
     background-color: color($colors, 'dark');
   }
 
+  .toolbar button {
+    color: white;
+  }
+
   .bar-button-menutoggle {
     color: white;
   }
@@ -42,5 +62,9 @@
   .about-item {
     background-color: #2b2b2b;
     color: #fff;
+  }
+
+  .movie-detail-title span{
+    color: darkgray;
   }
 }

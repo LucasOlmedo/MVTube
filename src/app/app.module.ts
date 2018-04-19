@@ -19,6 +19,9 @@ import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { Globalization } from "@ionic-native/globalization";
 import { AboutPage } from '../pages/about/about';
 import { PopcornApiProvider } from '../providers/popcorn-api/popcorn-api';
+import { MoviesPage } from '../pages/movies/movies';
+import { MovieDetailPage } from '../pages/movie-detail/movie-detail';
+import { HelperProvider } from '../providers/helper/helper';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -29,7 +32,9 @@ export function createTranslateLoader(http: HttpClient) {
     MyApp,
     HomePage,
     SettingsPage,
-    AboutPage
+    AboutPage,
+    MoviesPage,
+    MovieDetailPage
   ],
   imports: [
     BrowserModule,
@@ -49,7 +54,9 @@ export function createTranslateLoader(http: HttpClient) {
     MyApp,
     HomePage,
     SettingsPage,
-    AboutPage
+    AboutPage,
+    MoviesPage,
+    MovieDetailPage
   ],
   providers: [
     StatusBar,
@@ -57,7 +64,8 @@ export function createTranslateLoader(http: HttpClient) {
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     SettingsProvider,
     Globalization,
-    PopcornApiProvider
+    PopcornApiProvider,
+    HelperProvider
   ]
 })
 export class AppModule { }

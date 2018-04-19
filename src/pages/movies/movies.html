@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      {{'MOVIES_PAGE.PAGE_TITLE' | translate}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let movie of movies" col-4 class="col-movie">
+        <button ion-button class="movie-img-btn" margin-vertical (click)="getMovieDetails(movie.imdb_id)">
+          <img src="{{movie.images.poster}}" alt="">
+        </button>
+        <span text-wrap>
+          <strong>{{movie.title}}</strong>
+          <br>
+          <small>{{movie.year}}</small>
+        </span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

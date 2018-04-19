@@ -24,5 +24,12 @@
     "API_DESCRIPTION": "API di https://popcorntime.sh",
     "PAGE_TITLE": "Informazioni",
     "VERSION_TITLE": "Versione {{value}}"
+  },
+  "MOVIES_PAGE": {
+    "PAGE_TITLE": "Film"
+  },
+  "MOVIE_DETAILS_PAGE": {
+    "TRAILER": "Trailer",
+    "PLAY": "Vedere ora"
   }
 }

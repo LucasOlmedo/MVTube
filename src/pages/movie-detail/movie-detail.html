@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons end margin-right>
+      <button ion-button icon-only>
+        <ion-icon name="star-outline"></ion-icon>
+      </button>
+      <button ion-button icon-only>
+        <ion-icon name="share"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="fanart">
+    <img src="{{movie.images.fanart}}" alt="">
+    <button ion-fab mini class="button-theme">
+      <ion-icon name="images"></ion-icon>
+    </button>
+  </div>
+  <ion-grid padding>
+    <ion-row>
+      <ion-col class="movie-detail-title">
+        <h1 text-wrap>{{movie.title}}</h1>
+        <span>
+          {{movie.year}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{movie.runtime + ' min'}}
+        </span>
+        <br>
+        <br>
+        <span *ngFor="let gen of movie.genres" text-capitalize>
+          {{formatGenre(gen, movie.genres)}}
+        </span>
+        <br>
+        <br>
+        <div class="rating">
+          <ion-icon [name]="star.one" class="icon-theme"></ion-icon>
+          <ion-icon [name]="star.two" class="icon-theme"></ion-icon>
+          <ion-icon [name]="star.three" class="icon-theme"></ion-icon>
+          <ion-icon [name]="star.four" class="icon-theme"></ion-icon>
+          <ion-icon [name]="star.five" class="icon-theme"></ion-icon>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <p text-wrap>
+          {{movie.synopsis}}
+        </p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6>
+        <button ion-button block class="button-theme">
+            {{'MOVIE_DETAILS_PAGE.TRAILER' | translate}}
+        </button>
+      </ion-col>
+      <ion-col col-6>
+        <button ion-button block class="button-theme">
+            {{'MOVIE_DETAILS_PAGE.PLAY' | translate}}
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -7,12 +7,29 @@
     background-color: color($colors, 'danger');
   }
 
+  .toolbar button {
+    color: white;
+  }
+
   .bar-button-menutoggle {
     color: white;
   }
 
   .red-selected {
     box-shadow: 0 0 8px 1px rgb(0, 140, 255); 
+  }
+
+  .icon-theme {
+    color: color($colors, 'danger');
+  }
+
+  .button-theme {
+    background-color: color($colors, 'danger');
+    color: white;
+  }
+
+  .button-theme.activated {
+    background-color: color($colors, 'danger');
   }
 
   ion-card {

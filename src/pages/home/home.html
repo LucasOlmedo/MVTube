@@ -11,7 +11,7 @@
 
 <ion-content class="card-background-page">
   <ion-card>
-    <button ion-button class="card-img-button">
+    <button ion-button class="card-img-button" (click)="getAllMovies()">
       <img class="card-img" src="assets/imgs/movies.jpg" />
       <div class="card-title">
         {{'HOME_PAGE.MOVIES.TITLE' | translate}}
@@ -19,7 +19,7 @@
     </button>
   </ion-card>
   <ion-card>
-    <button ion-button class="card-img-button">
+    <button ion-button class="card-img-button" (click)="getAllTvShows()">
       <img class="card-img" src="assets/imgs/tv-shows.jpg" />
       <div class="card-title">
         {{'HOME_PAGE.TV_SHOWS.TITLE' | translate}}
@@ -27,7 +27,7 @@
     </button>
   </ion-card>
   <ion-card>
-    <button ion-button class="card-img-button">
+    <button ion-button class="card-img-button" (click)="getAllAnimes()">
       <img class="card-img " src="assets/imgs/animes.jpg" />
       <div class="card-title">
         {{'HOME_PAGE.ANIMES.TITLE' | translate}}
