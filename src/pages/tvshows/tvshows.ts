@@ -35,7 +35,7 @@ export class TvshowsPage {
   doInfinite($scroll) {
     setTimeout(() => {
       this.page++;
-      this.apiProvider.getMovies(this.page)
+      this.apiProvider.getTvShows(this.page)
         .subscribe((response: any) => {
           for (let index = 0; index < response.length; index++) {
             let element = response[index];

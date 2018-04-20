@@ -31,5 +31,11 @@
   "MOVIE_DETAILS_PAGE": {
     "TRAILER": "Filmtrailer",
     "PLAY": "Jetzt ansehen"
+  },
+  "TVSHOWS_PAGE": {
+    "PAGE_TITLE": "Serie"
+  },
+  "ANIMES_PAGE": {
+    "PAGE_TITLE": "Animes"
   }
 }

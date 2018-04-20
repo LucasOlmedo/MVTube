@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the AnimesPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { PopcornApiProvider } from '../../providers/popcorn-api/popcorn-api';
 
 @IonicPage()
 @Component({
@@ -15,11 +9,42 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AnimesPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  animes: any;
+  singleAnime: any;
+  page: any;
+
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private apiProvider: PopcornApiProvider
+  ) {
+    this.animes = navParams.get('animes');
+    console.log(this.animes);
+    this.page = 1;
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad AnimesPage');
+  getAnimeDetails(id) {
+    this.apiProvider.animeDetail(id)
+      .subscribe(response => {
+        this.singleAnime = response;
+        // this.navCtrl.push(MovieDetailPage, {
+        //   movie: this.singleMovie
+        // });
+      });
+  }
+
+  doInfinite($scroll) {
+    setTimeout(() => {
+      this.page++;
+      this.apiProvider.getAnimes(this.page)
+        .subscribe((response: any) => {
+          for (let index = 0; index < response.length; index++) {
+            let element = response[index];
+            this.animes.push(element);
+          }
+          $scroll.complete();
+        })
+    }, 700);
   }
 
 }

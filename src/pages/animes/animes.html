@@ -1,18 +1,31 @@
-<!--
-  Generated template for the AnimesPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>animes</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      {{'ANIMES_PAGE.PAGE_TITLE' | translate}}
+    </ion-title>
   </ion-navbar>
-
 </ion-header>
 
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let anime of animes" col-4 class="col-anime">
+        <button ion-button class="anime-img-btn" margin-vertical (click)="getAnimeDetails(anime._id)">
+          <img src="https://media.kitsu.io/anime/poster_images/{{anime._id}}/small.jpg" alt="">
+        </button>
+        <span text-wrap>
+          <strong>{{anime.title}}</strong>
+          <br>
+          <small>{{anime.year}}</small>
+        </span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
-<ion-content padding>
-
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>

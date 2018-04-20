@@ -5,6 +5,7 @@ import { SettingsProvider } from '../../providers/settings/settings';
 import { PopcornApiProvider } from '../../providers/popcorn-api/popcorn-api';
 import { MoviesPage } from '../movies/movies';
 import { TvshowsPage } from '../tvshows/tvshows';
+import { AnimesPage } from '../animes/animes';
 
 @Component({
   selector: 'page-home',
@@ -56,7 +57,10 @@ export class HomePage {
   getAllAnimes() {
     this.api.getAnimes(1)
       .subscribe(response => {
-        console.log(response);
+        this.animes = response;
+        this.navCtrl.setRoot(AnimesPage, {
+          animes: this.animes
+        });
       });
   }
 

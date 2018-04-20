@@ -23,6 +23,7 @@ import { MoviesPage } from '../pages/movies/movies';
 import { MovieDetailPage } from '../pages/movie-detail/movie-detail';
 import { HelperProvider } from '../providers/helper/helper';
 import { TvshowsPage } from '../pages/tvshows/tvshows';
+import { AnimesPage } from '../pages/animes/animes';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -36,7 +37,8 @@ export function createTranslateLoader(http: HttpClient) {
     AboutPage,
     MoviesPage,
     MovieDetailPage,
-    TvshowsPage
+    TvshowsPage,
+    AnimesPage
   ],
   imports: [
     BrowserModule,
@@ -59,7 +61,8 @@ export function createTranslateLoader(http: HttpClient) {
     AboutPage,
     MoviesPage,
     MovieDetailPage,
-    TvshowsPage
+    TvshowsPage,
+    AnimesPage
   ],
   providers: [
     StatusBar,
