@@ -26,6 +26,7 @@ import { TvshowsPage } from '../pages/tvshows/tvshows';
 import { AnimesPage } from '../pages/animes/animes';
 import { TvshowDetailPage } from '../pages/tvshow-detail/tvshow-detail';
 import { AnimeDetailPage } from '../pages/anime-detail/anime-detail';
+import { EpisodesComponent } from '../components/episodes/episodes';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -42,7 +43,8 @@ export function createTranslateLoader(http: HttpClient) {
     TvshowsPage,
     TvshowDetailPage,
     AnimesPage,
-    AnimeDetailPage
+    AnimeDetailPage,
+    EpisodesComponent
   ],
   imports: [
     BrowserModule,
@@ -68,7 +70,8 @@ export function createTranslateLoader(http: HttpClient) {
     TvshowsPage,
     TvshowDetailPage,
     AnimesPage,
-    AnimeDetailPage
+    AnimeDetailPage,
+    EpisodesComponent
   ],
   providers: [
     StatusBar,
