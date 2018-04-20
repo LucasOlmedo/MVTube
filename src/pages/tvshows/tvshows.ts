@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { PopcornApiProvider } from '../../providers/popcorn-api/popcorn-api';
+import { TvshowDetailPage } from '../tvshow-detail/tvshow-detail';
 
 @IonicPage()
 @Component({
@@ -12,6 +13,7 @@ export class TvshowsPage {
   tvshows: any;
   singleShow: any;
   page: any;
+  timestamp: any;
 
   constructor(
     public navCtrl: NavController, 
@@ -20,15 +22,16 @@ export class TvshowsPage {
   ) {
     this.tvshows = navParams.get('tvshows');
     this.page = 1;
+    this.timestamp = Math.floor(Date.now() / 1000);
   }
 
   getTvShowDetails(id) {
     this.apiProvider.tvShowDetail(id)
       .subscribe(response => {
         this.singleShow = response;
-        // this.navCtrl.push(MovieDetailPage, {
-        //   movie: this.singleMovie
-        // });
+        this.navCtrl.push(TvshowDetailPage, {
+          tvshow: this.singleShow
+        });
       });
   }
 

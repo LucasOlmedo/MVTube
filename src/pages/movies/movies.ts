@@ -13,12 +13,14 @@ export class MoviesPage {
   movies: any;
   singleMovie: any;
   page: number;
+  timestamp: any;
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     private apiProvider: PopcornApiProvider
   ) {
+    this.timestamp = Math.floor(Date.now() / 1000);
     this.movies = navParams.get('movies');
     this.page = 1;
   }

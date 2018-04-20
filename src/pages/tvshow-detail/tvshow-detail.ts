@@ -4,12 +4,12 @@ import { HelperProvider } from '../../providers/helper/helper';
 
 @IonicPage()
 @Component({
-  selector: 'page-movie-detail',
-  templateUrl: 'movie-detail.html',
+  selector: 'page-tvshow-detail',
+  templateUrl: 'tvshow-detail.html',
 })
-export class MovieDetailPage {
+export class TvshowDetailPage {
 
-  movie: any;
+  tvshow: any;
   star: any = {
     one: '',
     two: '',
@@ -20,16 +20,17 @@ export class MovieDetailPage {
   timestamp: any;
 
   constructor(
-    public navCtrl: NavController,
+    public navCtrl: NavController, 
     public navParams: NavParams,
-    private helper: HelperProvider
+    public helper: HelperProvider
   ) {
     this.timestamp = Math.floor(Date.now() / 1000);
-    this.movie = this.navParams.get('movie');
-    this.star = this.helper.transformRating(this.movie.rating.percentage, this.star);
+    this.tvshow = navParams.get('tvshow');
+    this.star = this.helper.transformRating(this.tvshow.rating.percentage, this.star);
   }
 
   formatGenre(gen, array) {
     return this.helper.formatGenre(gen, array)
   }
+
 }

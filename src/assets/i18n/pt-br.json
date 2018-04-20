@@ -35,6 +35,10 @@
   "TVSHOWS_PAGE": {
     "PAGE_TITLE": "Séries"
   },
+  "TVSHOWS_DETAILS_PAGE": {
+    "TRAILER": "Trailer",
+    "PLAY": "Assistir agora"
+  },
   "ANIMES_PAGE": {
     "PAGE_TITLE": "Animes"
   }

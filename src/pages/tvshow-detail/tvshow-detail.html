@@ -13,7 +13,7 @@
 
 <ion-content>
   <div class="fanart">
-    <img src="{{movie.images.fanart}}?{{timestamp}}" alt="">
+    <img src="{{tvshow.images.fanart}}?{{timestamp}}" alt="">
     <button ion-fab mini class="button-theme">
       <ion-icon name="images"></ion-icon>
     </button>
@@ -21,14 +21,14 @@
   <ion-grid padding>
     <ion-row>
       <ion-col class="item-detail-title">
-        <h1 text-wrap>{{movie.title}}</h1>
+        <h1 text-wrap>{{tvshow.title}}</h1>
         <span>
-          {{movie.year}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{movie.runtime + ' min'}}
+          {{tvshow.year}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{tvshow.runtime + ' min'}}
         </span>
         <br>
         <br>
-        <span *ngFor="let gen of movie.genres" text-capitalize>
-          {{formatGenre(gen, movie.genres)}}
+        <span *ngFor="let gen of tvshow.genres" text-capitalize>
+          {{formatGenre(gen, tvshow.genres)}}
         </span>
         <br>
         <br>
@@ -44,19 +44,19 @@
     <ion-row>
       <ion-col>
         <p text-wrap>
-          {{movie.synopsis}}
+          {{tvshow.synopsis}}
         </p>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col col-6>
         <button ion-button block class="button-theme">
-            {{'MOVIE_DETAILS_PAGE.TRAILER' | translate}}
+            {{'TVSHOWS_DETAILS_PAGE.TRAILER' | translate}}
         </button>
       </ion-col>
       <ion-col col-6>
         <button ion-button block class="button-theme">
-            {{'MOVIE_DETAILS_PAGE.PLAY' | translate}}
+            {{'TVSHOWS_DETAILS_PAGE.PLAY' | translate}}
         </button>
       </ion-col>
     </ion-row>

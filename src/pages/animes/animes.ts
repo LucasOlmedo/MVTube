@@ -12,6 +12,7 @@ export class AnimesPage {
   animes: any;
   singleAnime: any;
   page: any;
+  timestamp: any;
 
   constructor(
     public navCtrl: NavController,
@@ -19,8 +20,8 @@ export class AnimesPage {
     private apiProvider: PopcornApiProvider
   ) {
     this.animes = navParams.get('animes');
-    console.log(this.animes);
     this.page = 1;
+    this.timestamp = Math.floor(Date.now() / 1000);
   }
 
   getAnimeDetails(id) {

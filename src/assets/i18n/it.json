@@ -35,6 +35,10 @@
   "TVSHOWS_PAGE": {
     "PAGE_TITLE": "Spettacoli TV"
   },
+  "TVSHOWS_DETAILS_PAGE": {
+    "TRAILER": "Trailer",
+    "PLAY": "Vedere ora"
+  },
   "ANIMES_PAGE": {
     "PAGE_TITLE": "Anime"
   }

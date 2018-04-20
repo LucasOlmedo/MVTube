@@ -14,7 +14,7 @@
     <ion-row>
       <ion-col *ngFor="let show of tvshows" col-4 class="col-show">
         <button ion-button class="show-img-btn" margin-vertical (click)="getTvShowDetails(show.imdb_id)">
-          <img src="{{show.images.poster}}" alt="">
+          <img src="{{show.images.poster}}?{{timestamp}}" alt="">
         </button>
         <span text-wrap>
           <strong>{{show.title}}</strong>
