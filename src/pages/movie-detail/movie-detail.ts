@@ -24,7 +24,6 @@ export class MovieDetailPage {
     private helper: HelperProvider
   ) {
     this.movie = this.navParams.get('movie');
-    console.log(this.movie);
     this.star = this.helper.transformRating(this.movie.rating.percentage, this.star);
   }
 

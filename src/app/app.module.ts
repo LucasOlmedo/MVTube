@@ -22,6 +22,7 @@ import { PopcornApiProvider } from '../providers/popcorn-api/popcorn-api';
 import { MoviesPage } from '../pages/movies/movies';
 import { MovieDetailPage } from '../pages/movie-detail/movie-detail';
 import { HelperProvider } from '../providers/helper/helper';
+import { TvshowsPage } from '../pages/tvshows/tvshows';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -34,7 +35,8 @@ export function createTranslateLoader(http: HttpClient) {
     SettingsPage,
     AboutPage,
     MoviesPage,
-    MovieDetailPage
+    MovieDetailPage,
+    TvshowsPage
   ],
   imports: [
     BrowserModule,
@@ -56,7 +58,8 @@ export function createTranslateLoader(http: HttpClient) {
     SettingsPage,
     AboutPage,
     MoviesPage,
-    MovieDetailPage
+    MovieDetailPage,
+    TvshowsPage
   ],
   providers: [
     StatusBar,

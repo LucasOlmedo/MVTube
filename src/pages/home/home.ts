@@ -4,6 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { SettingsProvider } from '../../providers/settings/settings';
 import { PopcornApiProvider } from '../../providers/popcorn-api/popcorn-api';
 import { MoviesPage } from '../movies/movies';
+import { TvshowsPage } from '../tvshows/tvshows';
 
 @Component({
   selector: 'page-home',
@@ -33,7 +34,7 @@ export class HomePage {
   }
 
   getAllMovies() {
-    this.api.getMovies()
+    this.api.getMovies(1)
       .subscribe(response => {
         this.movies = response;
         this.navCtrl.setRoot(MoviesPage, {
@@ -43,14 +44,17 @@ export class HomePage {
   }
 
   getAllTvShows() {
-    this.api.getTvShows()
+    this.api.getTvShows(1)
       .subscribe(response => {
-        console.log(response);
+        this.tvShows = response;
+        this.navCtrl.setRoot(TvshowsPage, {
+          tvshows: this.tvShows
+        });
       });
   }
 
   getAllAnimes() {
-    this.api.getAnimes()
+    this.api.getAnimes(1)
       .subscribe(response => {
         console.log(response);
       });

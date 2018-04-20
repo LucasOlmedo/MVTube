@@ -14,20 +14,28 @@ export class PopcornApiProvider {
     this.url = API_URL;
   }
 
-  public getMovies() {
-    return this.http.get(this.url + 'movies/1');
+  public getMovies(page) {
+    return this.http.get(this.url + 'movies/' + page);
+  }
+
+  public getTvShows(page) {
+    return this.http.get(this.url + 'shows/' + page);
+  }
+
+  public getAnimes(page) {
+    return this.http.get(this.url + 'animes/' + page);
   }
 
   public movieDetail(id) {
     return this.http.get(this.url + 'movie/' + id);
   }
 
-  public getTvShows() {
-    return this.http.get(this.url + 'shows/1');
+  public tvShowDetail(id) {
+    return this.http.get(this.url + 'show/' + id);
   }
 
-  public getAnimes() {
-    return this.http.get(this.url + 'animes/1');
+  public animeDetail(id) {
+    return this.http.get(this.url + 'anime/' + id);
   }
 
 }

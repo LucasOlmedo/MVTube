@@ -1,35 +1,34 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { PopcornApiProvider } from '../../providers/popcorn-api/popcorn-api';
-import { MovieDetailPage } from '../movie-detail/movie-detail';
 
 @IonicPage()
 @Component({
-  selector: 'page-movies',
-  templateUrl: 'movies.html',
+  selector: 'page-tvshows',
+  templateUrl: 'tvshows.html',
 })
-export class MoviesPage {
+export class TvshowsPage {
 
-  movies: any;
-  singleMovie: any;
-  page: number;
+  tvshows: any;
+  singleShow: any;
+  page: any;
 
   constructor(
-    public navCtrl: NavController,
+    public navCtrl: NavController, 
     public navParams: NavParams,
     private apiProvider: PopcornApiProvider
   ) {
-    this.movies = navParams.get('movies');
+    this.tvshows = navParams.get('tvshows');
     this.page = 1;
   }
 
-  getMovieDetails(id) {
-    this.apiProvider.movieDetail(id)
+  getTvShowDetails(id) {
+    this.apiProvider.tvShowDetail(id)
       .subscribe(response => {
-        this.singleMovie = response;
-        this.navCtrl.push(MovieDetailPage, {
-          movie: this.singleMovie
-        });
+        this.singleShow = response;
+        // this.navCtrl.push(MovieDetailPage, {
+        //   movie: this.singleMovie
+        // });
       });
   }
 
@@ -40,7 +39,7 @@ export class MoviesPage {
         .subscribe((response: any) => {
           for (let index = 0; index < response.length; index++) {
             let element = response[index];
-            this.movies.push(element);
+            this.tvshows.push(element);
           }
           $scroll.complete();
         })
