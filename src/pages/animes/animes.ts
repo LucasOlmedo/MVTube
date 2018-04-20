@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { PopcornApiProvider } from '../../providers/popcorn-api/popcorn-api';
+import { AnimeDetailPage } from '../anime-detail/anime-detail';
 
 @IonicPage()
 @Component({
@@ -28,9 +29,9 @@ export class AnimesPage {
     this.apiProvider.animeDetail(id)
       .subscribe(response => {
         this.singleAnime = response;
-        // this.navCtrl.push(MovieDetailPage, {
-        //   movie: this.singleMovie
-        // });
+        this.navCtrl.push(AnimeDetailPage, {
+          anime: this.singleAnime
+        });
       });
   }
 

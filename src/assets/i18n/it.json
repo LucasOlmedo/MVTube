@@ -41,5 +41,9 @@
   },
   "ANIMES_PAGE": {
     "PAGE_TITLE": "Anime"
+  },
+  "ANIME_DETAILS_PAGE": {
+    "TRAILER": "Trailer",
+    "PLAY": "Vedere ora"
   }
 }
