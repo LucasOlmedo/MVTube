@@ -18,6 +18,7 @@ export class AnimeDetailPage {
     five: '',
   };
   timestamp: any;
+  episodes: any;
 
   constructor(
     public navCtrl: NavController,
@@ -27,10 +28,25 @@ export class AnimeDetailPage {
     this.timestamp = Math.floor(Date.now() / 1000);
     this.anime = navParams.get('anime');
     this.star = this.helper.transformRating(this.anime.rating.percentage, this.star);
+    this.episodes = this.groupEpisodesBySeason(
+      this.anime.episodes,
+      this.anime.num_seasons
+    );
   }
 
   formatGenre(gen, array) {
     return this.helper.formatGenre(gen, array)
+  }
+
+  groupEpisodesBySeason(ep, se) {
+    var formatted: any = [];
+    for (let index = 1; index <= se; index++) {
+      formatted.push({
+        season: index, 
+        list: ep.filter(item => item.season == index) 
+      });
+    }
+    return formatted;
   }
 
 }
