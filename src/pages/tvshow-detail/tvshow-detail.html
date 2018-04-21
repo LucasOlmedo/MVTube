@@ -55,7 +55,7 @@
     </ion-row>
     <ion-row>
       <ion-col>
-        <episodes [episodes]="episodes" *ngFor="let item of episodes"></episodes>
+        <episodes *ngFor="let episode of episodes" [episode]="episode"></episodes>
       </ion-col>
     </ion-row>
   </ion-grid>

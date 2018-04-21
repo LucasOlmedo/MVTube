@@ -45,5 +45,8 @@
   "ANIME_DETAILS_PAGE": {
     "TRAILER": "Filmtrailer",
     "PLAY": "Jetzt ansehen"
+  },
+  "EPISODES": {
+    "SEASON": "Jahreszeit"
   }
 }

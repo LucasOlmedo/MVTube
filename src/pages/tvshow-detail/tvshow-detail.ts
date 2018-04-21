@@ -48,8 +48,8 @@ export class TvshowDetailPage {
     var formatted: any = [];
     for (let index = 1; index <= se; index++) {
       formatted.push({
-        season: index,
-        episodes: ep.filter(item => item.season == index)
+        season: index, 
+        list: ep.filter(item => item.season == index) 
       });
     }
     return formatted;

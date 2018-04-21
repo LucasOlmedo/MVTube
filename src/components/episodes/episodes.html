@@ -1,9 +1,22 @@
 <ion-card class="season">
-  <button ion-button full class="ion-card-header" (click)="toggleCard()">
-    ttt
+  <button ion-button full class="season-card-header button-theme" (click)="toggleCard()">
+    {{'EPISODES.SEASON' | translate}} {{episode.season}}
   </button>
-  <ion-card-content #cardContent>
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas dolorem veniam fuga quia, quidem sequi facere placeat
-    at architecto harum dolores asperiores sapiente obcaecati delectus labore nobis in optio? Eius.
+  <ion-card-content class="season-card-content" #cardContent>
+    <ion-list>
+      <ion-item *ngFor="let ep of episode.list">
+        <small>
+          <strong>
+            #{{ep.episode}} - {{ep.title}}
+          </strong>
+        </small>
+        <button ion-fab mini item-end class="button-theme" (click)="episodeInfo(ep)">
+          <ion-icon name="information-circle"></ion-icon>
+        </button>
+        <button ion-fab mini item-end class="button-theme">
+          <ion-icon name="play"></ion-icon>
+        </button>
+      </ion-item>
+    </ion-list>
   </ion-card-content>
 </ion-card>

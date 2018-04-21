@@ -4,10 +4,25 @@ episodes {
         margin: 0;
         padding: 0;
         width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .season-card-header {
+        margin: 0;
+        padding: 0;
     }
 
     .card-content {
-        padding: 0px 15px; 
+        padding: 0px 10px;
         max-height: 0px;
+    }
+
+    .fab[mini] {
+        width: 35px;
+        height: 35px;
+    }
+
+    .fab ion-icon {
+        font-size: 2rem;
     }
 }
