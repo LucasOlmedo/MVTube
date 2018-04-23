@@ -1,6 +1,6 @@
 .red-theme {
   .toolbar-title {
-    color: #fff;
+    color: white;
   }
   
   .toolbar-background {
@@ -39,5 +39,24 @@
   .season-card-content {
     background: white;
     color: black;
+  }
+}
+
+ion-modal {
+  .red-theme {
+
+    height: inherit;
+
+    .toolbar-title {
+      color: white;
+    }
+    
+    .toolbar-background {
+      background-color: color($colors, 'danger');
+    }
+
+    .toolbar button {
+      color: white;
+    }
   }
 }

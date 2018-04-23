@@ -20,7 +20,7 @@ import { Globalization } from "@ionic-native/globalization";
 import { AboutPage } from '../pages/about/about';
 import { PopcornApiProvider } from '../providers/popcorn-api/popcorn-api';
 import { MoviesPage } from '../pages/movies/movies';
-import { MovieDetailPage } from '../pages/movie-detail/movie-detail';
+import { MovieDetailPage, TrailerModal } from '../pages/movie-detail/movie-detail';
 import { HelperProvider } from '../providers/helper/helper';
 import { TvshowsPage } from '../pages/tvshows/tvshows';
 import { AnimesPage } from '../pages/animes/animes';
@@ -45,7 +45,8 @@ export function createTranslateLoader(http: HttpClient) {
     AnimesPage,
     AnimeDetailPage,
     EpisodesComponent,
-    EpisodeDetails
+    EpisodeDetails,
+    TrailerModal
   ],
   imports: [
     BrowserModule,
@@ -73,7 +74,8 @@ export function createTranslateLoader(http: HttpClient) {
     AnimesPage,
     AnimeDetailPage,
     EpisodesComponent,
-    EpisodeDetails
+    EpisodeDetails,
+    TrailerModal
   ],
   providers: [
     StatusBar,

@@ -23,7 +23,7 @@ export class EpisodesComponent implements OnInit {
     this.render.setElementStyle(
       this.cardContent.nativeElement,
       'transition',
-      'max-height 450ms, padding 450ms'
+      'max-height 450ms, padding 300ms'
     );
   }
 
@@ -33,7 +33,7 @@ export class EpisodesComponent implements OnInit {
       this.render.setElementStyle(
         this.cardContent.nativeElement,
         'max-height',
-        '0vh'
+        '0px'
       );
       this.render.setElementStyle(
         this.cardContent.nativeElement,
@@ -44,12 +44,12 @@ export class EpisodesComponent implements OnInit {
       this.render.setElementStyle(
         this.cardContent.nativeElement,
         'max-height',
-        '1000vh'
+        '3400px'
       );
       this.render.setElementStyle(
         this.cardContent.nativeElement,
         'padding',
-        '10px 10px'
+        '5px 10px'
       );
     }
 

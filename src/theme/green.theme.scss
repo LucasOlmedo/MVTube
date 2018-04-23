@@ -1,6 +1,6 @@
 .green-theme {
   .toolbar-title {
-    color: #fff;
+    color: white;
   }
   
   .toolbar-background {
@@ -40,4 +40,23 @@
     background: white;
     color: black;
   }
+}
+
+ion-modal {
+  .green-theme {
+
+    height: inherit;
+
+    .toolbar-title {
+      color: white;
+    }
+    
+    .toolbar-background {
+      background-color: color($colors, 'secondary');
+    }
+
+    .toolbar button {
+      color: white;
+    }
+  }   
 }

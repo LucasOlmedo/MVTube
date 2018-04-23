@@ -7,7 +7,7 @@
       <ion-item *ngFor="let ep of episode.list">
         <small>
           <strong>
-            #{{ep.episode}} - {{ep.title}}
+            {{ep.title}}
           </strong>
         </small>
         <button ion-fab mini item-end class="button-theme" (click)="episodeInfo(ep)">

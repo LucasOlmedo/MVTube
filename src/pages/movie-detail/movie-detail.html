@@ -50,7 +50,7 @@
     </ion-row>
     <ion-row>
       <ion-col col-6>
-        <button ion-button block class="button-theme">
+        <button ion-button block class="button-theme" (click)="showTrailer(movie.trailer)">
             {{'MOVIE_DETAILS_PAGE.TRAILER' | translate}}
         </button>
       </ion-col>

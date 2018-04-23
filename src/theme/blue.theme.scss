@@ -41,3 +41,22 @@
     color: black;
   }
 }
+
+ion-modal {
+  .blue-theme {
+
+    height: inherit;
+
+    .toolbar-title {
+      color: white;
+    }
+    
+    .toolbar-background {
+      background-color: color($colors, 'primary');
+    }
+  
+    .toolbar button{
+      color: white;
+    }
+  }
+}

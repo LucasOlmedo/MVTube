@@ -33,3 +33,14 @@
     color: black;
   }
 }
+
+ion-modal {
+  .light-theme {
+
+    height: inherit;
+
+    .toolbar-background {
+      background-color: color($colors, 'light');
+    }
+  }
+}
