@@ -58,7 +58,8 @@ export class EpisodesComponent implements OnInit {
 
   episodeInfo(episode) {
     let pop = this.popover.create(EpisodeDetails, {
-      description: episode.overview
+      description: episode.overview,
+      title: episode.title
     });
     pop.present();
   }
@@ -67,6 +68,11 @@ export class EpisodesComponent implements OnInit {
 
 @Component({
   template: `
+  <ion-header>
+    <ion-toolbar padding>
+      {{title}}
+    </ion-toolbar>
+  </ion-header>
     <ion-content>
       <ion-grid padding>
         <ion-row>
@@ -81,11 +87,13 @@ export class EpisodesComponent implements OnInit {
 export class EpisodeDetails {
 
   description: any;
+  title: string;
 
   constructor(
     public viewCtrl: ViewController,
     private navParams: NavParams
   ) {
     this.description = navParams.data.description;
+    this.title = navParams.data.title;
   }
 }
