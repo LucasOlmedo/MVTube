@@ -10,11 +10,13 @@ episodes {
     .season-card-header {
         margin: 0;
         padding: 0;
+        z-index: 1;
     }
 
     .card-content {
         padding: 0px 10px;
-        max-height: 0px;
+        max-height: 0;
+        overflow: hidden;
     }
 
     .fab[mini] {
@@ -24,5 +26,10 @@ episodes {
 
     .fab ion-icon {
         font-size: 2rem;
+    }
+
+    .icon-accordion {
+        position: relative;
+        right: -25%;
     }
 }

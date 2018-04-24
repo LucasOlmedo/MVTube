@@ -54,13 +54,4 @@ export class AnimesPage {
     this.navCtrl.setRoot(HomePage);
   }
 
-  randomAnime() {
-    this.apiProvider.random('anime')
-      .subscribe(response => {
-        this.singleAnime = response;
-        this.navCtrl.push(AnimeDetailPage, {
-          anime: this.singleAnime
-        });
-      });
-  }
 }

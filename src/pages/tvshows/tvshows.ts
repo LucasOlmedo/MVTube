@@ -54,13 +54,4 @@ export class TvshowsPage {
     this.navCtrl.setRoot(HomePage);
   }
 
-  randomShow() {
-    this.apiProvider.random('show')
-      .subscribe(response => {
-        this.singleShow = response;
-        this.navCtrl.push(TvshowDetailPage, {
-          tvshow: this.singleShow
-        });
-      });
-  }
 }

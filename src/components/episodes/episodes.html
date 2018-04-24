@@ -1,9 +1,10 @@
 <ion-card class="season">
   <button ion-button full class="season-card-header button-theme" (click)="toggleCard()">
     {{'EPISODES.SEASON' | translate}} {{episode.season}}
+    <ion-icon icon-only name="{{expanded ? 'remove' : 'add'}}" class="icon-accordion"></ion-icon>
   </button>
   <ion-card-content class="season-card-content" #cardContent>
-    <ion-list>
+    <ion-list inset>
       <ion-item *ngFor="let ep of episode.list">
         <small>
           <strong>

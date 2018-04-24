@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit, Renderer, Input } from '@angular/core';
+import { Component, ViewChild, Renderer, Input } from '@angular/core';
 import { NavParams, ViewController, PopoverController } from 'ionic-angular';
 import { SettingsProvider } from '../../providers/settings/settings';
 
@@ -6,7 +6,7 @@ import { SettingsProvider } from '../../providers/settings/settings';
   selector: 'episodes',
   templateUrl: 'episodes.html'
 })
-export class EpisodesComponent implements OnInit {
+export class EpisodesComponent {
 
   @Input() episode: any;
   @ViewChild("cardContent") cardContent: any;
@@ -24,37 +24,19 @@ export class EpisodesComponent implements OnInit {
       .subscribe(value => this.selectedTheme = value);
   }
 
-  ngOnInit() {
-    this.render.setElementStyle(
-      this.cardContent.nativeElement,
-      'transition',
-      'max-height 450ms, padding 300ms'
-    );
-  }
-
   toggleCard() {
 
     if (this.expanded) {
       this.render.setElementStyle(
         this.cardContent.nativeElement,
         'max-height',
-        '0px'
-      );
-      this.render.setElementStyle(
-        this.cardContent.nativeElement,
-        'padding',
-        '0px 10px'
+        '0'
       );
     } else {
       this.render.setElementStyle(
         this.cardContent.nativeElement,
         'max-height',
-        '3400px'
-      );
-      this.render.setElementStyle(
-        this.cardContent.nativeElement,
-        'padding',
-        '5px 10px'
+        this.cardContent.nativeElement.scrollHeight + 'px'
       );
     }
 
