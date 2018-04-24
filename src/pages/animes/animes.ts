@@ -49,9 +49,18 @@ export class AnimesPage {
         })
     }, 700);
   }
-  
-  backHome(){
+
+  backHome() {
     this.navCtrl.setRoot(HomePage);
   }
 
+  randomAnime() {
+    this.apiProvider.random('anime')
+      .subscribe(response => {
+        this.singleAnime = response;
+        this.navCtrl.push(AnimeDetailPage, {
+          anime: this.singleAnime
+        });
+      });
+  }
 }

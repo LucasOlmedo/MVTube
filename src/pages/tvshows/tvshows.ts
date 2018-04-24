@@ -17,7 +17,7 @@ export class TvshowsPage {
   timestamp: any;
 
   constructor(
-    public navCtrl: NavController, 
+    public navCtrl: NavController,
     public navParams: NavParams,
     private apiProvider: PopcornApiProvider
   ) {
@@ -50,7 +50,17 @@ export class TvshowsPage {
     }, 700);
   }
 
-  backHome(){
+  backHome() {
     this.navCtrl.setRoot(HomePage);
+  }
+
+  randomShow() {
+    this.apiProvider.random('show')
+      .subscribe(response => {
+        this.singleShow = response;
+        this.navCtrl.push(TvshowDetailPage, {
+          tvshow: this.singleShow
+        });
+      });
   }
 }

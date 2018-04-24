@@ -7,6 +7,7 @@ export class PopcornApiProvider {
 
   private url: string;
   private headers;
+  private timestamp: any;
 
   constructor(
     private http: HttpClient
@@ -36,6 +37,11 @@ export class PopcornApiProvider {
 
   public animeDetail(id) {
     return this.http.get(this.url + 'anime/' + id);
+  }
+
+  public random(random) {
+    this.timestamp = Math.floor(Date.now() / 1000);
+    return this.http.get(this.url + 'random/' + random + '?t=' + this.timestamp );
   }
 
 }

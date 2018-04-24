@@ -49,7 +49,7 @@
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col col-6>
+      <ion-col col-6 *ngIf="movie.trailer">
         <button ion-button block class="button-theme" (click)="showTrailer(movie.trailer)">
             {{'MOVIE_DETAILS_PAGE.TRAILER' | translate}}
         </button>

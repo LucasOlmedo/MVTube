@@ -39,14 +39,16 @@ export class AnimeDetailPage {
   }
 
   groupEpisodesBySeason(ep, se) {
-    var formatted: any = [];
-    for (let index = 1; index <= se; index++) {
-      formatted.push({
-        season: index, 
-        list: ep.filter(item => item.season == index) 
-      });
+    if (ep && se) {
+      var formatted: any = [];
+      for (let index = 1; index <= se; index++) {
+        formatted.push({
+          season: index,
+          list: ep.filter(item => item.season == index)
+        });
+      }
+      return formatted;
     }
-    return formatted;
   }
 
 }

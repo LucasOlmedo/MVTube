@@ -50,7 +50,17 @@ export class MoviesPage {
     }, 700);
   }
 
-  backHome(){
+  backHome() {
     this.navCtrl.setRoot(HomePage);
+  }
+
+  randomMovie() {
+    this.apiProvider.random('movie')
+      .subscribe(response => {
+        this.singleMovie = response;
+        this.navCtrl.push(MovieDetailPage, {
+          movie: this.singleMovie
+        });
+      });
   }
 }

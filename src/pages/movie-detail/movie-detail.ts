@@ -58,7 +58,7 @@ export class MovieDetailPage {
           <ion-title>
             Trailer
           </ion-title>
-          <ion-buttons end>
+          <ion-buttons end margin-right>
             <button ion-button (click)="dismiss()">
               <ion-icon name="close"></ion-icon>
             </button>
