@@ -1,11 +1,28 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { FileTransfer, FileUploadOptions, FileTransferObject } from "@ionic-native/file-transfer";
+import { File } from "@ionic-native/file";
 
 @Injectable()
 export class HelperProvider {
 
-  constructor(public http: HttpClient) {
+  fileTransfer: FileTransferObject;
+  timestamp: any;
 
+  constructor(
+    public httpClient: HttpClient,
+    private transfer: FileTransfer,
+    private file: File
+  ) {
+    this.fileTransfer = transfer.create();
+  }
+
+  download(imageUrl) {
+    this.timestamp = Math.floor(Date.now() / 1000);
+    this.fileTransfer.download(imageUrl, this.file.externalRootDirectory + `/Download/${this.timestamp}.jpg`)
+    .then(value => {
+      alert('download complete: ' + value.toURL());
+    });
   }
 
   formatGenre(gen, array) {

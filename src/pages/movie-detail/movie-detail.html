@@ -14,7 +14,7 @@
 <ion-content>
   <div class="fanart">
     <img src="{{movie.images.fanart}}?{{timestamp}}" alt="" onerror="this.src='assets/imgs/img404.png'">
-    <button ion-fab mini class="button-theme">
+    <button ion-fab mini class="button-theme" (click)="downloadImage(movie.images.fanart)">
       <ion-icon name="images"></ion-icon>
     </button>
   </div>

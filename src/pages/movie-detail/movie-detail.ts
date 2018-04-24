@@ -48,6 +48,10 @@ export class MovieDetailPage {
     });
     trailerModal.present();
   }
+
+  downloadImage(url) {
+    this.helper.download(url);
+  }
 }
 
 @Component({

@@ -27,6 +27,8 @@ import { AnimesPage } from '../pages/animes/animes';
 import { TvshowDetailPage } from '../pages/tvshow-detail/tvshow-detail';
 import { AnimeDetailPage } from '../pages/anime-detail/anime-detail';
 import { EpisodesComponent, EpisodeDetails } from '../components/episodes/episodes';
+import { FileTransfer } from '@ionic-native/file-transfer';
+import { File } from '@ionic-native/file';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -83,6 +85,8 @@ export function createTranslateLoader(http: HttpClient) {
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     SettingsProvider,
     Globalization,
+    FileTransfer,
+    File,
     PopcornApiProvider,
     HelperProvider
   ]

@@ -41,9 +41,9 @@ export class MyApp {
     this.initLang();
     this.initSettings();
     this.platform.ready().then(() => {
-      this.statusBar.overlaysWebView(false);
       this.statusBar.hide();
-      // this.splashScreen.hide();
+      this.statusBar.overlaysWebView(false);
+      this.splashScreen.hide();
     });
   }
 
