@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { PopcornApiProvider } from '../../providers/popcorn-api/popcorn-api';
 import { AnimeDetailPage } from '../anime-detail/anime-detail';
+import { HomePage } from '../home/home';
 
 @IonicPage()
 @Component({
@@ -47,6 +48,10 @@ export class AnimesPage {
           $scroll.complete();
         })
     }, 700);
+  }
+  
+  backHome(){
+    this.navCtrl.setRoot(HomePage);
   }
 
 }

@@ -1,5 +1,6 @@
 import { Component, ViewChild, OnInit, Renderer, Input } from '@angular/core';
 import { NavParams, ViewController, PopoverController } from 'ionic-angular';
+import { SettingsProvider } from '../../providers/settings/settings';
 
 @Component({
   selector: 'episodes',
@@ -10,13 +11,17 @@ export class EpisodesComponent implements OnInit {
   @Input() episode: any;
   @ViewChild("cardContent") cardContent: any;
   expanded: boolean;
+  selectedTheme: any;
 
   constructor(
     private render: Renderer,
     public navParams: NavParams,
-    private popover: PopoverController
+    private popover: PopoverController,
+    private settings: SettingsProvider
   ) {
     this.expanded = false;
+    this.settings.getActiveTheme()
+      .subscribe(value => this.selectedTheme = value);
   }
 
   ngOnInit() {
@@ -59,7 +64,8 @@ export class EpisodesComponent implements OnInit {
   episodeInfo(episode) {
     let pop = this.popover.create(EpisodeDetails, {
       description: episode.overview,
-      title: episode.title
+      title: episode.title,
+      theme: this.selectedTheme
     });
     pop.present();
   }
@@ -68,11 +74,14 @@ export class EpisodesComponent implements OnInit {
 
 @Component({
   template: `
-  <ion-header>
-    <ion-toolbar padding>
-      {{title}}
-    </ion-toolbar>
-  </ion-header>
+  <div #popover [class]="theme">
+    <ion-header>
+      <ion-toolbar padding class="episode-info-title">
+        <ion-col>
+          <strong>{{title}}</strong>
+        </ion-col>
+      </ion-toolbar>
+    </ion-header>
     <ion-content>
       <ion-grid padding>
         <ion-row>
@@ -82,12 +91,14 @@ export class EpisodesComponent implements OnInit {
         </ion-row>
       </ion-grid>
     </ion-content>
+  </div>
   `
 })
 export class EpisodeDetails {
 
   description: any;
   title: string;
+  theme: any;
 
   constructor(
     public viewCtrl: ViewController,
@@ -95,5 +106,6 @@ export class EpisodeDetails {
   ) {
     this.description = navParams.data.description;
     this.title = navParams.data.title;
+    this.theme = navParams.data.theme;
   }
 }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { PopcornApiProvider } from '../../providers/popcorn-api/popcorn-api';
 import { MovieDetailPage } from '../movie-detail/movie-detail';
+import { HomePage } from '../home/home';
 
 @IonicPage()
 @Component({
@@ -49,4 +50,7 @@ export class MoviesPage {
     }, 700);
   }
 
+  backHome(){
+    this.navCtrl.setRoot(HomePage);
+  }
 }
