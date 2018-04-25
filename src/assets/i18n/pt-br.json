@@ -30,7 +30,14 @@
   },
   "MOVIE_DETAILS_PAGE": {
     "TRAILER": "Trailer",
-    "PLAY": "Assistir agora"
+    "PLAY": "Assistir agora",
+    "DOWNLOAD_SUCCESS": "Wallpaper salvo em ",
+    "DOWNLOAD_ERROR": "Não foi possível baixar a imagem!",
+    "DOWNLOAD_BUTTON": {
+      "TITLE": "Plano de fundo",
+      "DOWNLOAD": "Baixar imagem",
+      "CANCEL": "Cancelar"
+    }
   },
   "TVSHOWS_PAGE": {
     "PAGE_TITLE": "Séries"

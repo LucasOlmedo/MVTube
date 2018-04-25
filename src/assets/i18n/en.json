@@ -30,7 +30,9 @@
   },
   "MOVIE_DETAILS_PAGE": {
     "TRAILER": "Trailer",
-    "PLAY": "Play now"
+    "PLAY": "Play now",
+    "DOWNLOAD_SUCCESS": "Wallpaper saved in ",
+    "DOWNLOAD_ERROR": "Could not download image!"
   },
   "TVSHOWS_PAGE": {
     "PAGE_TITLE": "TV Shows"

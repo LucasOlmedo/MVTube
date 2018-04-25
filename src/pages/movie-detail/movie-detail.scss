@@ -13,3 +13,7 @@
     position: absolute;
     top: 25%;
 }
+
+.btn-cancel-download {
+    color: color($colors, 'danger') !important;
+}

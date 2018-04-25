@@ -30,7 +30,9 @@
   },
   "MOVIE_DETAILS_PAGE": {
     "TRAILER": "Filmtrailer",
-    "PLAY": "Jetzt ansehen"
+    "PLAY": "Jetzt ansehen",
+    "DOWNLOAD_SUCCESS": "Wallpaper gespeichert in ",
+    "DOWNLOAD_ERROR": "Bild konnte nicht gespeichert werden!"
   },
   "TVSHOWS_PAGE": {
     "PAGE_TITLE": "Serie"

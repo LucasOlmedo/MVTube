@@ -30,7 +30,9 @@
   },
   "MOVIE_DETAILS_PAGE": {
     "TRAILER": "Trailer",
-    "PLAY": "Vedere ora"
+    "PLAY": "Vedere ora",
+    "DOWNLOAD_SUCCESS": "Immagine salvata in ",
+    "DOWNLOAD_ERROR": "Impossibile salvare l'immagine!"
   },
   "TVSHOWS_PAGE": {
     "PAGE_TITLE": "Spettacoli TV"

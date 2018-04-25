@@ -30,7 +30,9 @@
   },
   "MOVIE_DETAILS_PAGE": {
     "TRAILER": "Trailer",
-    "PLAY": "Ver ahora"
+    "PLAY": "Ver ahora",
+    "DOWNLOAD_SUCCESS": "Imagen guardada en ",
+    "DOWNLOAD_ERROR": "¡No fue posible descargar la imagen!"
   },
   "TVSHOWS_PAGE": {
     "PAGE_TITLE": "Series de TV"

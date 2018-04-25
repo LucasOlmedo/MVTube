@@ -19,10 +19,10 @@ export class HelperProvider {
 
   download(imageUrl) {
     this.timestamp = Math.floor(Date.now() / 1000);
-    this.fileTransfer.download(imageUrl, this.file.externalRootDirectory + `/Download/${this.timestamp}.jpg`)
-    .then(value => {
-      alert('download complete: ' + value.toURL());
-    });
+    return this.fileTransfer.download(
+      imageUrl, 
+      this.file.externalRootDirectory + `/Download/movie_wallpaper_${this.timestamp}.jpg`
+    );
   }
 
   formatGenre(gen, array) {
