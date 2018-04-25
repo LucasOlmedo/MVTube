@@ -2,6 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { FileTransfer, FileUploadOptions, FileTransferObject } from "@ionic-native/file-transfer";
 import { File } from "@ionic-native/file";
+import { ActionSheetController, ToastController } from 'ionic-angular';
+import { SettingsProvider } from '../settings/settings';
+import { SocialSharing } from '@ionic-native/social-sharing';
 
 @Injectable()
 export class HelperProvider {
@@ -12,7 +15,11 @@ export class HelperProvider {
   constructor(
     public httpClient: HttpClient,
     private transfer: FileTransfer,
-    private file: File
+    private file: File,
+    private actionSheet: ActionSheetController,
+    private toast: ToastController,
+    private settings: SettingsProvider,
+    private social: SocialSharing
   ) {
     this.fileTransfer = transfer.create();
   }
@@ -20,7 +27,7 @@ export class HelperProvider {
   download(imageUrl) {
     this.timestamp = Math.floor(Date.now() / 1000);
     return this.fileTransfer.download(
-      imageUrl, 
+      imageUrl,
       this.file.externalRootDirectory + `/Download/movie_wallpaper_${this.timestamp}.jpg`
     );
   }
@@ -87,4 +94,53 @@ export class HelperProvider {
 
     return star;
   }
+
+  downloadImage(url) {
+    let action = this.actionSheet.create({
+      title: this.settings.instantTranslate('DOWNLOAD_WALLPAPER.TITLE'),
+      buttons: [
+        {
+          text: this.settings.instantTranslate('DOWNLOAD_WALLPAPER.DOWNLOAD'),
+          icon: 'download',
+          handler: () => {
+            this.download(url)
+              .then(result => {
+                let toast = this.toast.create({
+                  message: this.settings
+                    .instantTranslate('DOWNLOAD_WALLPAPER.DOWNLOAD_SUCCESS')
+                    + result.toURL(),
+                  duration: 2000,
+                  position: 'bottom'
+                });
+                toast.present();
+              })
+              .catch(result => {
+                let toast = this.toast.create({
+                  message: this.settings
+                    .instantTranslate('DOWNLOAD_WALLPAPER.DOWNLOAD_ERROR'),
+                  duration: 2000,
+                  position: 'bottom'
+                });
+                toast.present();
+              });
+          }
+        },
+        {
+          text: this.settings.instantTranslate('DOWNLOAD_WALLPAPER.SHARE'),
+          icon: 'share',
+          cssClass: 'btn-share-image',
+          handler: () => {
+            this.social.share(null, null, url);
+          }
+        },
+        {
+          text: this.settings.instantTranslate('DOWNLOAD_WALLPAPER.CANCEL'),
+          icon: 'close',
+          cssClass: 'btn-cancel-download',
+        }
+      ]
+    });
+    action.present();
+  }
+
 }

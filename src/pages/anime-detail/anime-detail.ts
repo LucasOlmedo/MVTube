@@ -19,6 +19,7 @@ export class AnimeDetailPage {
   };
   timestamp: any;
   episodes: any;
+  animeimage: string;
 
   constructor(
     public navCtrl: NavController,
@@ -32,6 +33,7 @@ export class AnimeDetailPage {
       this.anime.episodes,
       this.anime.num_seasons
     );
+    this.animeimage = `https://media.kitsu.io/anime/cover_images/${this.anime._id}/original.jpg?${this.timestamp}`;
   }
 
   formatGenre(gen, array) {
@@ -49,6 +51,10 @@ export class AnimeDetailPage {
       }
       return formatted;
     }
+  }
+
+  downloadImage(url) {
+    this.helper.downloadImage(url);
   }
 
 }

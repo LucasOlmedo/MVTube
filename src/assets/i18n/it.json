@@ -30,14 +30,7 @@
   },
   "MOVIE_DETAILS_PAGE": {
     "TRAILER": "Trailer",
-    "PLAY": "Vedere ora",
-    "DOWNLOAD_SUCCESS": "Immagine salvata in ",
-    "DOWNLOAD_ERROR": "Impossibile salvare l'immagine!",
-    "DOWNLOAD_BUTTON": {
-      "TITLE": "Immagine di sfondo",
-      "DOWNLOAD": "Download di immagine",
-      "CANCEL": "Annullare"
-    }
+    "PLAY": "Vedere ora"
   },
   "TVSHOWS_PAGE": {
     "PAGE_TITLE": "Spettacoli TV"
@@ -55,5 +48,13 @@
   },
   "EPISODES": {
     "SEASON": "Stagione"
+  },
+  "DOWNLOAD_WALLPAPER": {
+    "TITLE": "Immagine di sfondo",
+    "DOWNLOAD": "Download di immagine",
+    "SHARE": "Condividi immagine",
+    "CANCEL": "Annullare",
+    "DOWNLOAD_SUCCESS": "Immagine salvata in ",
+    "DOWNLOAD_ERROR": "Impossibile salvare l'immagine!"
   }
 }

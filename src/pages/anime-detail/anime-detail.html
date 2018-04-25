@@ -13,8 +13,8 @@
 
 <ion-content>
   <div class="fanart">
-    <img src="https://media.kitsu.io/anime/cover_images/{{anime._id}}/original.jpg?{{timestamp}}" alt="" onerror="this.src='assets/imgs/img404.png'">
-    <button ion-fab mini class="button-theme">
+    <img src="{{animeimage}}" alt="" onerror="this.src='assets/imgs/img404.png'">
+    <button ion-fab mini class="button-theme" (click)="downloadImage(animeimage)">
       <ion-icon name="images"></ion-icon>
     </button>
   </div>

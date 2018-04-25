@@ -30,14 +30,7 @@
   },
   "MOVIE_DETAILS_PAGE": {
     "TRAILER": "Trailer",
-    "PLAY": "Assistir agora",
-    "DOWNLOAD_SUCCESS": "Wallpaper salvo em ",
-    "DOWNLOAD_ERROR": "Não foi possível baixar a imagem!",
-    "DOWNLOAD_BUTTON": {
-      "TITLE": "Plano de fundo",
-      "DOWNLOAD": "Baixar imagem",
-      "CANCEL": "Cancelar"
-    }
+    "PLAY": "Assistir agora"
   },
   "TVSHOWS_PAGE": {
     "PAGE_TITLE": "Séries"
@@ -55,5 +48,13 @@
   },
   "EPISODES": {
     "SEASON": "Temporada"
+  },
+  "DOWNLOAD_WALLPAPER": {
+    "TITLE": "Plano de fundo",
+    "DOWNLOAD": "Baixar imagem",
+    "SHARE": "Compartilhar",
+    "CANCEL": "Cancelar",
+    "DOWNLOAD_SUCCESS": "Wallpaper salvo em ",
+    "DOWNLOAD_ERROR": "Não foi possível baixar a imagem!"
   }
 }

@@ -56,4 +56,9 @@ export class TvshowDetailPage {
       return formatted;
     }
   }
+
+  downloadImage(url) {
+    this.helper.downloadImage(url);
+  }
+
 }

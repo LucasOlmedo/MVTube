@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController, ViewController, ToastController, ActionSheetController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController, ViewController } from 'ionic-angular';
 import { HelperProvider } from '../../providers/helper/helper';
 import { DomSanitizer } from '@angular/platform-browser';
 import { SettingsProvider } from '../../providers/settings/settings';
@@ -28,8 +28,6 @@ export class MovieDetailPage {
     private helper: HelperProvider,
     private modal: ModalController,
     private settings: SettingsProvider,
-    private toast: ToastController,
-    private actionSheet: ActionSheetController
   ) {
     this.timestamp = Math.floor(Date.now() / 1000);
     this.movie = this.navParams.get('movie');
@@ -52,45 +50,9 @@ export class MovieDetailPage {
   }
 
   downloadImage(url) {
-    let action = this.actionSheet.create({
-      title: this.settings.instantTranslate('MOVIE_DETAILS_PAGE.DOWNLOAD_BUTTON.TITLE'),
-      buttons: [
-        {
-          text: this.settings.instantTranslate('MOVIE_DETAILS_PAGE.DOWNLOAD_BUTTON.DOWNLOAD'),
-          icon: 'download',
-          handler: () => {
-            let formattedUrl = url.replace('/w500', '/w600');
-            this.helper.download(formattedUrl)
-              .then(result => {
-                let toast = this.toast.create({
-                  message: this.settings
-                    .instantTranslate('MOVIE_DETAILS_PAGE.DOWNLOAD_SUCCESS')
-                    + result.toURL(),
-                  duration: 1000,
-                  position: 'bottom'
-                });
-                toast.present();
-              })
-              .catch(result => {
-                let toast = this.toast.create({
-                  message: this.settings
-                    .instantTranslate('MOVIE_DETAILS_PAGE.DOWNLOAD_ERROR'),
-                  duration: 1000,
-                  position: 'bottom'
-                });
-                toast.present();
-              });
-          }
-        },
-        {
-          text: this.settings.instantTranslate('MOVIE_DETAILS_PAGE.DOWNLOAD_BUTTON.CANCEL'),
-          icon: 'close',
-          cssClass: 'btn-cancel-download',
-        }
-      ]
-    });
-    action.present();
+    this.helper.downloadImage(url);
   }
+
 }
 
 @Component({

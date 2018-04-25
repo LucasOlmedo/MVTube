@@ -29,6 +29,7 @@ import { AnimeDetailPage } from '../pages/anime-detail/anime-detail';
 import { EpisodesComponent, EpisodeDetails } from '../components/episodes/episodes';
 import { FileTransfer } from '@ionic-native/file-transfer';
 import { File } from '@ionic-native/file';
+import { SocialSharing } from '@ionic-native/social-sharing';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -88,7 +89,8 @@ export function createTranslateLoader(http: HttpClient) {
     FileTransfer,
     File,
     PopcornApiProvider,
-    HelperProvider
+    HelperProvider,
+    SocialSharing
   ]
 })
 export class AppModule { }
