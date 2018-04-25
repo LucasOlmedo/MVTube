@@ -32,7 +32,12 @@
     "TRAILER": "Trailer",
     "PLAY": "Vedere ora",
     "DOWNLOAD_SUCCESS": "Immagine salvata in ",
-    "DOWNLOAD_ERROR": "Impossibile salvare l'immagine!"
+    "DOWNLOAD_ERROR": "Impossibile salvare l'immagine!",
+    "DOWNLOAD_BUTTON": {
+      "TITLE": "Immagine di sfondo",
+      "DOWNLOAD": "Download di immagine",
+      "CANCEL": "Annullare"
+    }
   },
   "TVSHOWS_PAGE": {
     "PAGE_TITLE": "Spettacoli TV"

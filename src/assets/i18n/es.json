@@ -32,7 +32,12 @@
     "TRAILER": "Trailer",
     "PLAY": "Ver ahora",
     "DOWNLOAD_SUCCESS": "Imagen guardada en ",
-    "DOWNLOAD_ERROR": "¡No fue posible descargar la imagen!"
+    "DOWNLOAD_ERROR": "¡No fue posible descargar la imagen!",
+    "DOWNLOAD_BUTTON": {
+      "TITLE": "Imagen de fondo",
+      "DOWNLOAD": "Descargar imagen",
+      "CANCEL": "Anular"
+    }
   },
   "TVSHOWS_PAGE": {
     "PAGE_TITLE": "Series de TV"

@@ -32,7 +32,12 @@
     "TRAILER": "Trailer",
     "PLAY": "Play now",
     "DOWNLOAD_SUCCESS": "Wallpaper saved in ",
-    "DOWNLOAD_ERROR": "Could not download image!"
+    "DOWNLOAD_ERROR": "Could not download image!",
+    "DOWNLOAD_BUTTON": {
+      "TITLE": "Wallpaper",
+      "DOWNLOAD": "Download image",
+      "CANCEL": "Cancel"
+    }
   },
   "TVSHOWS_PAGE": {
     "PAGE_TITLE": "TV Shows"

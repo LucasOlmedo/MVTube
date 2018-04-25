@@ -32,7 +32,12 @@
     "TRAILER": "Filmtrailer",
     "PLAY": "Jetzt ansehen",
     "DOWNLOAD_SUCCESS": "Wallpaper gespeichert in ",
-    "DOWNLOAD_ERROR": "Bild konnte nicht gespeichert werden!"
+    "DOWNLOAD_ERROR": "Bild konnte nicht gespeichert werden!",
+    "DOWNLOAD_BUTTON": {
+      "TITLE": "Wallpaper",
+      "DOWNLOAD": "Bild herunterladen",
+      "CANCEL": "Stornieren"
+    }
   },
   "TVSHOWS_PAGE": {
     "PAGE_TITLE": "Serie"
