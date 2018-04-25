@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, ModalController, ViewController } 
 import { HelperProvider } from '../../providers/helper/helper';
 import { DomSanitizer } from '@angular/platform-browser';
 import { SettingsProvider } from '../../providers/settings/settings';
+import { WEBSITE } from "../../constants/api.constants";
 
 @IonicPage()
 @Component({
@@ -51,6 +52,17 @@ export class MovieDetailPage {
 
   downloadImage(url) {
     this.helper.downloadImage(url);
+  }
+
+  shareItem(movie) {
+    let title = this.settings.instantTranslate('SHARING.MOVIE_TITLE');
+    let image = `${movie.images.fanart}?${this.timestamp}`;
+    let message = `${movie.title}\n(${movie.year} - ${movie.runtime} min)\n\n${movie.synopsis}\n\n${title}\n${WEBSITE}`;
+    this.helper.share(
+      message,
+      title,
+      image
+    );
   }
 
 }

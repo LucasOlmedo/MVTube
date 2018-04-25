@@ -54,7 +54,12 @@
     "DOWNLOAD": "Download di immagine",
     "SHARE": "Condividi immagine",
     "CANCEL": "Annullare",
-    "DOWNLOAD_SUCCESS": "Immagine salvata in ",
+    "DOWNLOAD_SUCCESS": "Salvato in ",
     "DOWNLOAD_ERROR": "Impossibile salvare l'immagine!"
+  },
+  "SHARING": {
+    "MOVIE_TITLE": "Guardiamo un film?",
+    "TVSHOW_TITLE": "Che ne dici di guardare un spettacoli TV?",
+    "ANIME_TITLE": "Guarda come è bello questo anime!"
   }
 }

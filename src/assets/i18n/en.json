@@ -54,7 +54,12 @@
     "DOWNLOAD": "Download image",
     "SHARE": "Share image",
     "CANCEL": "Cancel",
-    "DOWNLOAD_SUCCESS": "Wallpaper saved in ",
+    "DOWNLOAD_SUCCESS": "Saved in ",
     "DOWNLOAD_ERROR": "Could not download image!"
+  },
+  "SHARING": {
+    "MOVIE_TITLE": "Let's watch a movie?",
+    "TVSHOW_TITLE": "How about watching TV shows?",
+    "ANIME_TITLE": "See that cool anime!"
   }
 }

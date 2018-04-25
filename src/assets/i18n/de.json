@@ -6,7 +6,7 @@
       "TITLE": "Filme"
     },
     "TV_SHOWS": {
-      "TITLE": "Serie"
+      "TITLE": "Fernsehserie"
     },
     "ANIMES": {
       "TITLE": "Animes"
@@ -33,7 +33,7 @@
     "PLAY": "Jetzt ansehen"
   },
   "TVSHOWS_PAGE": {
-    "PAGE_TITLE": "Serie"
+    "PAGE_TITLE": "Fernsehserie"
   },
   "TVSHOWS_DETAILS_PAGE": {
     "TRAILER": "Filmtrailer",
@@ -54,7 +54,12 @@
     "DOWNLOAD": "Bild herunterladen",
     "SHARE": "Bild teilen",
     "CANCEL": "Stornieren",
-    "DOWNLOAD_SUCCESS": "Wallpaper gespeichert in ",
+    "DOWNLOAD_SUCCESS": "Gespeichert in ",
     "DOWNLOAD_ERROR": "Bild konnte nicht gespeichert werden!"
+  },
+  "SHARING": {
+    "MOVIE_TITLE": "Lassen Sie uns einen Film ansehen?",
+    "TVSHOW_TITLE": "Wie wäre es mit einer Fernsehserie?",
+    "ANIME_TITLE": "Sieh diesen coolen Anime!"
   }
 }

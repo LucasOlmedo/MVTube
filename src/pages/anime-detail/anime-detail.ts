@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HelperProvider } from '../../providers/helper/helper';
+import { SettingsProvider } from '../../providers/settings/settings';
+import { WEBSITE } from '../../constants/api.constants';
 
 @IonicPage()
 @Component({
@@ -24,7 +26,8 @@ export class AnimeDetailPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    private helper: HelperProvider
+    private helper: HelperProvider,
+    private settings: SettingsProvider
   ) {
     this.timestamp = Math.floor(Date.now() / 1000);
     this.anime = navParams.get('anime');
@@ -55,6 +58,17 @@ export class AnimeDetailPage {
 
   downloadImage(url) {
     this.helper.downloadImage(url);
+  }
+
+  shareItem(anime) {
+    let title = this.settings.instantTranslate('SHARING.ANIME_TITLE');
+    let image = this.animeimage;
+    let message = `${anime.title}\n(${anime.year} - ${anime.runtime} min)\n\n${anime.synopsis}\n\n${title}\n${WEBSITE}`;
+    this.helper.share(
+      message,
+      title,
+      image
+    );
   }
 
 }

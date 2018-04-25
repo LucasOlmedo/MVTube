@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { FileTransfer, FileUploadOptions, FileTransferObject } from "@ionic-native/file-transfer";
+import { FileTransfer, FileTransferObject } from "@ionic-native/file-transfer";
 import { File } from "@ionic-native/file";
 import { ActionSheetController, ToastController } from 'ionic-angular';
 import { SettingsProvider } from '../settings/settings';
@@ -28,7 +28,7 @@ export class HelperProvider {
     this.timestamp = Math.floor(Date.now() / 1000);
     return this.fileTransfer.download(
       imageUrl,
-      this.file.externalRootDirectory + `/Download/movie_wallpaper_${this.timestamp}.jpg`
+      this.file.externalRootDirectory + `/Download/${this.timestamp}.jpg`
     );
   }
 
@@ -108,8 +108,8 @@ export class HelperProvider {
                 let toast = this.toast.create({
                   message: this.settings
                     .instantTranslate('DOWNLOAD_WALLPAPER.DOWNLOAD_SUCCESS')
-                    + result.toURL(),
-                  duration: 2000,
+                    + 'Download/' + result.name,
+                  duration: 2600,
                   position: 'bottom'
                 });
                 toast.present();
@@ -118,7 +118,7 @@ export class HelperProvider {
                 let toast = this.toast.create({
                   message: this.settings
                     .instantTranslate('DOWNLOAD_WALLPAPER.DOWNLOAD_ERROR'),
-                  duration: 2000,
+                  duration: 2600,
                   position: 'bottom'
                 });
                 toast.present();
@@ -141,6 +141,14 @@ export class HelperProvider {
       ]
     });
     action.present();
+  }
+
+  share(message, title, image) {
+    return this.social.share(
+      message,
+      title,
+      image
+    );
   }
 
 }

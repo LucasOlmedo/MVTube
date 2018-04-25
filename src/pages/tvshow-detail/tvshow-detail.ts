@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HelperProvider } from '../../providers/helper/helper';
+import { SettingsProvider } from '../../providers/settings/settings';
+import { WEBSITE } from '../../constants/api.constants';
 
 @IonicPage()
 @Component({
@@ -23,7 +25,8 @@ export class TvshowDetailPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public helper: HelperProvider
+    public helper: HelperProvider,
+    private settings: SettingsProvider
   ) {
     this.timestamp = Math.floor(Date.now() / 1000);
     this.tvshow = navParams.get('tvshow');
@@ -59,6 +62,17 @@ export class TvshowDetailPage {
 
   downloadImage(url) {
     this.helper.downloadImage(url);
+  }
+
+  shareItem(tvshow) {
+    let title = this.settings.instantTranslate('SHARING.TVSHOW_TITLE');
+    let image = `${tvshow.images.fanart}?${this.timestamp}`;
+    let message = `${tvshow.title}\n(${tvshow.year} - ${tvshow.runtime} min)\n\n${tvshow.synopsis}\n\n${title}\n${WEBSITE}`;
+    this.helper.share(
+      message,
+      title,
+      image
+    );
   }
 
 }

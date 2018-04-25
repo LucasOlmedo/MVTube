@@ -54,7 +54,12 @@
     "DOWNLOAD": "Descargar imagen",
     "SHARE": "Compartir imagen",
     "CANCEL": "Anular",
-    "DOWNLOAD_SUCCESS": "Imagen guardada en ",
+    "DOWNLOAD_SUCCESS": "Guardado en ",
     "DOWNLOAD_ERROR": "¡No fue posible descargar la imagen!"
+  },
+  "SHARING": {
+    "MOVIE_TITLE": "¿Vamos a ver una película?",
+    "TVSHOW_TITLE": "¿Qué tal ver una serie de televisión?",
+    "ANIME_TITLE": "¡Mira qué anime legal!"
   }
 }
