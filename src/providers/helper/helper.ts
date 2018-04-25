@@ -21,7 +21,7 @@ export class HelperProvider {
     private settings: SettingsProvider,
     private social: SocialSharing
   ) {
-    this.fileTransfer = transfer.create();
+    this.fileTransfer = this.transfer.create();
   }
 
   download(imageUrl) {
