@@ -50,8 +50,4 @@ export class AnimesPage {
     }, 700);
   }
 
-  backHome() {
-    this.navCtrl.setRoot(HomePage);
-  }
-
 }

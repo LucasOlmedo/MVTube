@@ -62,5 +62,16 @@ ion-modal {
     .toolbar button {
       color: white;
     }
-  }   
+  }
+  
+  .modal-alert {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    display: block;
+    width: 80%;
+    height: 50%;
+    box-shadow: 0px 0px 0px 10000px rgba(0, 0, 0, 0.5);
+  }
+ 
 }

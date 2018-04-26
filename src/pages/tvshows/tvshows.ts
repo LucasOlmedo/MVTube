@@ -50,8 +50,4 @@ export class TvshowsPage {
     }, 700);
   }
 
-  backHome() {
-    this.navCtrl.setRoot(HomePage);
-  }
-
 }
