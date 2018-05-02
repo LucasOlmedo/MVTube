@@ -61,5 +61,58 @@
     "MOVIE_TITLE": "Let's watch a movie?",
     "TVSHOW_TITLE": "How about watching TV shows?",
     "ANIME_TITLE": "See that cool anime!"
-  }
+  },
+  "FILTER": {
+    "TITLE": "Filters",
+    "APPLY": "Apply",
+    "ORDER": {
+      "NORMAL": "Normal",
+      "INVERSE": "Inverse"
+    },
+    "SORT": {
+      "LAST_ADDED": "Last added",
+      "RATING": "Rating",
+      "TITLE": "Title",
+      "TRENDING": "Trending",
+      "YEAR": "Year"
+    },
+    "GENRE": {
+      "MOVIE_TVSHOW": {
+        "ACTION": "Action",
+        "ADVENTURE": "Adventure",
+        "ANIMATION": "Animation",
+        "COMEDY": "Comedy",
+        "CRIME": "Crime",
+        "DISASTER": "Disaster",
+        "DOCUMENTARY": "Documentary",
+        "DRAMA": "Drama",
+        "EASTERN": "Eastern",
+        "FAMILY": "Family",
+        "FAN_FILM": "Fan film",
+        "FANTASY": "Fantasy",
+        "FILM_NOIR": "Film noir",
+        "HISTORY": "History",
+        "HOLIDAY": "Holiday",
+        "HORROR": "Horror",
+        "INDIE": "Indie",
+        "MUSIC": "Music",
+        "MYSTERY": "Mystery",
+        "NONE": "None",
+        "ROAD": "Road",
+        "ROMANCE": "Romance",
+        "SCIENCE_FICTION": "Science fiction",
+        "SHORT": "Short",
+        "SPORTS": "Sports",
+        "SPORTING_EVENT": "Sporting event",
+        "SUSPENSE": "Suspense",
+        "THRILLER": "Thriller",
+        "TV_MOVIE": "TV movie",
+        "WAR": "War",
+        "WESTERN": "Western"
+      }
+    }
+  },
+  "GENRE": "Genre",
+  "SORT": "Sort",
+  "ORDER": "Order"
 }

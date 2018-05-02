@@ -61,5 +61,58 @@
     "MOVIE_TITLE": "Lassen Sie uns einen Film ansehen?",
     "TVSHOW_TITLE": "Wie wäre es mit einer Fernsehserie?",
     "ANIME_TITLE": "Sieh diesen coolen Anime!"
-  }
+  },
+  "FILTER": {
+    "TITLE": "Filter",
+    "APPLY": "Anwenden",
+    "ORDER": {
+      "NORMAL": "Normal",
+      "INVERSE": "Invers"
+    },
+    "SORT": {
+      "LAST_ADDED": "Kürzlich hinzugefügt",
+      "RATING": "Bewertung",
+      "TITLE": "Titel",
+      "TRENDING": "Popularität",
+      "YEAR": "Jahr"
+    },
+    "GENRE": {
+      "MOVIE_TVSHOW": {
+        "ACTION": "Aktion",
+        "ADVENTURE": "Abenteuer",
+        "ANIMATION": "Animation",
+        "COMEDY": "Komödie",
+        "CRIME": "Verbrechen",
+        "DISASTER": "Katastrophen",
+        "DOCUMENTARY": "Dokumentation",
+        "DRAMA": "Drama",
+        "EASTERN": "Orientalisch",
+        "FAMILY": "Familie",
+        "FAN_FILM": "Von fans gemacht",
+        "FANTASY": "Fantasie",
+        "FILM_NOIR": "alter Film",
+        "HISTORY": "Geschichte",
+        "HOLIDAY": "Ferien",
+        "HORROR": "Terror",
+        "INDIE": "Unabhängig",
+        "MUSIC": "Musik",
+        "MYSTERY": "Geheimnis",
+        "NONE": "Unkategorisiert",
+        "ROAD": "Straße",
+        "ROMANCE": "Romantik",
+        "SCIENCE_FICTION": "Science-Fiction",
+        "SHORT": "Kurzfilm",
+        "SPORTS": "Sport",
+        "SPORTING_EVENT": "Sportveranstaltungen",
+        "SUSPENSE": "Spannung",
+        "THRILLER": "Thriller",
+        "TV_MOVIE": "Fernsehfilme",
+        "WAR": "Krieg",
+        "WESTERN": "Westlich"
+      }
+    }
+  },
+  "GENRE": "Genre",
+  "SORT": "Sortieren nach",
+  "ORDER": "Bestellen"
 }

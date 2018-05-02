@@ -61,5 +61,58 @@
     "MOVIE_TITLE": "¿Vamos a ver una película?",
     "TVSHOW_TITLE": "¿Qué tal ver una serie de televisión?",
     "ANIME_TITLE": "¡Mira qué anime legal!"
-  }
+  },
+  "FILTER": {
+    "TITLE": "Filtros",
+    "APPLY": "Aplicar",
+    "ORDER": {
+      "NORMAL": "Normal",
+      "INVERSE": "Inverso"
+    },
+    "SORT": {
+      "LAST_ADDED": "Añadido recientemente",
+      "RATING": "Evaluación",
+      "TITLE": "Título",
+      "TRENDING": "Popularidad",
+      "YEAR": "Año"
+    },
+    "GENRE": {
+      "MOVIE_TVSHOW": {
+        "ACTION": "Acción",
+        "ADVENTURE": "Aventura",
+        "ANIMATION": "Animación",
+        "COMEDY": "Comedia",
+        "CRIME": "Crimen",
+        "DISASTER": "Desastres",
+        "DOCUMENTARY": "Documental",
+        "DRAMA": "Drama",
+        "EASTERN": "Oriental",
+        "FAMILY": "Família",
+        "FAN_FILM": "Por los fans",
+        "FANTASY": "Fantasía",
+        "FILM_NOIR": "Blanco y negro",
+        "HISTORY": "Historia",
+        "HOLIDAY": "Vacaciones",
+        "HORROR": "Terror",
+        "INDIE": "Independiente",
+        "MUSIC": "Música",
+        "MYSTERY": "Misterio",
+        "NONE": "Sin categoría",
+        "ROAD": "Carretera",
+        "ROMANCE": "Novela",
+        "SCIENCE_FICTION": "Ficcíon científica",
+        "SHORT": "Curtometraje",
+        "SPORTS": "Deportes",
+        "SPORTING_EVENT": "Eventos deportivos",
+        "SUSPENSE": "Suspense",
+        "THRILLER": "Thriller",
+        "TV_MOVIE": "Películas de TV",
+        "WAR": "Guerra",
+        "WESTERN": "Occidental"
+      }
+    }
+  },
+  "GENRE": "Género",
+  "SORT": "Ordenar por",
+  "ORDER": "Orden"
 }
