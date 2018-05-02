@@ -92,7 +92,8 @@ export function createTranslateLoader(http: HttpClient) {
     File,
     PopcornApiProvider,
     HelperProvider,
-    SocialSharing
+    SocialSharing,
+    URLSearchParams
   ]
 })
 export class AppModule { }

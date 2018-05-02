@@ -41,7 +41,22 @@ export class PopcornApiProvider {
 
   public random(random) {
     this.timestamp = Math.floor(Date.now() / 1000);
-    return this.http.get(this.url + 'random/' + random + '?t=' + this.timestamp );
+    return this.http.get(this.url + 'random/' + random + '?t=' + this.timestamp);
+  }
+
+  public getWithFilter(page, endpoint, sort,  genre, order = '1', keywords = null) {
+    let params = new URLSearchParams;
+
+    if (sort != null)
+      params.set('sort', sort);
+
+    if (order != null)
+      params.set('order', order);
+
+    if (genre != null)
+      params.set('genre', genre);
+
+    return this.http.get(`${this.url}${endpoint}/${page}?` + params.toString());
   }
 
 }

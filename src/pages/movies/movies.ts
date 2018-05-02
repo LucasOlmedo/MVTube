@@ -88,10 +88,18 @@ export class FilterModal {
   constructor(
     params: NavParams,
     private view: ViewController,
-    private settings: SettingsProvider
+    private settings: SettingsProvider,
+    private api: PopcornApiProvider
   ) {
     this.theme = params.data.theme;
     this.filter = params.data.filter;
+  }
+
+  applyFilters() {
+    this.api.getWithFilter(1, 'movies', 'title', null)
+      .subscribe(response => {
+        console.log(response);
+      });
   }
 
   dismiss() {
