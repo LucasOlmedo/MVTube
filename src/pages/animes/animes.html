@@ -19,7 +19,7 @@
     <ion-row>
       <ion-col *ngFor="let anime of animes" col-4 class="col-anime">
         <button ion-button class="anime-img-btn" margin-vertical (click)="getAnimeDetails(anime._id)">
-          <img src="https://media.kitsu.io/anime/poster_images/{{anime._id}}/small.jpg?{{timestamp}}" alt="">
+          <img src="https://media.kitsu.io/anime/poster_images/{{anime._id}}/small.jpg?{{timestamp}}" alt="" onerror="this.src='assets/imgs/not-found-w500.png'">
         </button>
         <span text-wrap>
           <strong>{{anime.title}}</strong>

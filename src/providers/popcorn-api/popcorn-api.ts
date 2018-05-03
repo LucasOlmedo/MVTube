@@ -44,7 +44,7 @@ export class PopcornApiProvider {
     return this.http.get(this.url + 'random/' + random + '?t=' + this.timestamp);
   }
 
-  public getWithFilter(page, endpoint, sort,  genre, order = '1', keywords = null) {
+  public getWithFilter(page, endpoint, sort,  genre, order = '-1', keywords = null) {
     let params = new URLSearchParams;
 
     if (sort != null)

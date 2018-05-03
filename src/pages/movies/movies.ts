@@ -18,13 +18,19 @@ export class MoviesPage {
   page: number;
   timestamp: any;
   selectedTheme: any;
+  search = {
+    genre: '',
+    sort: '',
+    order: '-1',
+  };
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     private apiProvider: PopcornApiProvider,
     private modal: ModalController,
-    private settings: SettingsProvider
+    private settings: SettingsProvider,
+    private view: ViewController
   ) {
     this.timestamp = Math.floor(Date.now() / 1000);
     this.movies = navParams.get('movies');
@@ -46,7 +52,13 @@ export class MoviesPage {
   doInfinite($scroll) {
     setTimeout(() => {
       this.page++;
-      this.apiProvider.getMovies(this.page)
+      this.apiProvider.getWithFilter(
+        this.page,
+        'movies',
+        this.search.sort,
+        this.search.genre,
+        this.search.order
+      )
         .subscribe((response: any) => {
           for (let index = 0; index < response.length; index++) {
             let element = response[index];
@@ -70,8 +82,19 @@ export class MoviesPage {
   filterMovie() {
     let modalFilter = this.modal.create(FilterModal, {
       theme: this.selectedTheme,
-      filter: FILTER
+      filter: FILTER,
+      search: this.search
     });
+
+    modalFilter.onDidDismiss(data => {
+      if (data != null) {
+        this.movies = data.movies;
+        this.search = data.search;
+        this.page = 1;
+        this.view.getContent().scrollToTop();
+      }
+    });
+
     modalFilter.present();
   }
 }
@@ -84,22 +107,47 @@ export class FilterModal {
 
   theme: any;
   filter: any;
+  search = {
+    genre: '',
+    sort: '',
+    order: '-1',
+  };
+  movies: any = null;
 
   constructor(
     params: NavParams,
     private view: ViewController,
     private settings: SettingsProvider,
-    private api: PopcornApiProvider
+    private api: PopcornApiProvider,
   ) {
     this.theme = params.data.theme;
     this.filter = params.data.filter;
+    this.search = params.data.search;
   }
 
   applyFilters() {
-    this.api.getWithFilter(1, 'movies', 'title', null)
+    this.api.getWithFilter(
+      1,
+      'movies',
+      this.search.sort,
+      this.search.genre,
+      this.search.order
+    )
       .subscribe(response => {
-        console.log(response);
+        this.movies = response
+        this.view.dismiss({
+          movies: this.movies,
+          search: this.search
+        });
       });
+  }
+
+  resetFilters() {
+    this.search = {
+      genre: '',
+      sort: '',
+      order: '-1',
+    };
   }
 
   dismiss() {

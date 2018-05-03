@@ -22,7 +22,7 @@
     <ion-row>
       <ion-col *ngFor="let movie of movies" col-4 class="col-movie">
         <button ion-button class="movie-img-btn" margin-vertical (click)="getMovieDetails(movie.imdb_id)">
-          <img src="{{movie.images.poster}}?{{timestamp}}" alt="">
+          <img src="{{movie.images.poster}}?{{timestamp}}" alt="" onerror="this.src='assets/imgs/not-found-w500.png'">
         </button>
         <span text-wrap>
           <strong>{{movie.title}}</strong>

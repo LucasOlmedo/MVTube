@@ -324,11 +324,11 @@ const SORT = [
 const ORDER = [
     {
         value: '1',
-        title: 'FILTER.ORDER.NORMAL'
+        title: 'FILTER.ORDER.INCREASING'
     },
     {
         value: '-1',
-        title: 'FILTER.ORDER.INVERSE'
+        title: 'FILTER.ORDER.DECREASING'
     }
 ];
 

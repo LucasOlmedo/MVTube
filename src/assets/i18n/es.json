@@ -65,9 +65,10 @@
   "FILTER": {
     "TITLE": "Filtros",
     "APPLY": "Aplicar",
+    "DEFAULT": "Limpiar",
     "ORDER": {
-      "NORMAL": "Normal",
-      "INVERSE": "Inverso"
+      "INCREASING": "Creciente",
+      "DECREASING": "Decreciente"
     },
     "SORT": {
       "LAST_ADDED": "Añadido recientemente",
