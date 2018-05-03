@@ -27,7 +27,7 @@
                 {{'SORT' | translate}}
             </ion-label>
             <ion-select #filterSort [(ngModel)]="search.sort">
-                <ion-option *ngFor="let gen of filter.sort.movie" [value]="gen.value" translate>
+                <ion-option *ngFor="let gen of filter.sort.tvshow" [value]="gen.value" translate>
                     {{gen.title}}
                 </ion-option>
             </ion-select>

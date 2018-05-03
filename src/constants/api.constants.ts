@@ -298,28 +298,66 @@ const GENRE = {
     ]
 };
 
-const SORT = [
-    {
-        value: 'last added',
-        title: 'FILTER.SORT.LAST_ADDED'
-    },
-    {
-        value: 'rating',
-        title: 'FILTER.SORT.RATING'
-    },
-    {
-        value: 'title',
-        title: 'FILTER.SORT.TITLE'
-    },
-    {
-        value: 'trending',
-        title: 'FILTER.SORT.TRENDING'
-    },
-    {
-        value: 'year',
-        title: 'FILTER.SORT.YEAR'
-    }
-];
+const SORT = {
+    movie: [
+        {
+            value: 'last added',
+            title: 'FILTER.SORT.LAST_ADDED'
+        },
+        {
+            value: 'rating',
+            title: 'FILTER.SORT.RATING'
+        },
+        {
+            value: 'title',
+            title: 'FILTER.SORT.TITLE'
+        },
+        {
+            value: 'trending',
+            title: 'FILTER.SORT.TRENDING'
+        },
+        {
+            value: 'year',
+            title: 'FILTER.SORT.YEAR'
+        }
+    ],
+    tvshow: [
+        {
+            value: 'name',
+            title: 'FILTER.SORT.TITLE'
+        },
+        {
+            value: 'rating',
+            title: 'FILTER.SORT.RATING'
+        },
+        {
+            value: 'trending',
+            title: 'FILTER.SORT.TRENDING'
+        },
+        {
+            value: 'updated',
+            title: 'FILTER.SORT.UPDATED'
+        },
+        {
+            value: 'year',
+            title: 'FILTER.SORT.YEAR'
+        }
+    ],
+    anime: [
+        {
+            value: 'name',
+            title: 'FILTER.SORT.TITLE'
+        },
+        {
+            value: 'rating',
+            title: 'FILTER.SORT.RATING'
+        },
+        {
+            value: 'year',
+            title: 'FILTER.SORT.YEAR'
+        },
+    ]
+};
 
 const ORDER = [
     {
