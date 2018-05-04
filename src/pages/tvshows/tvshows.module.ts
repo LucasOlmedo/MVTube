@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { TvshowsPage, FilterModal } from './tvshows';
+import { TvshowsPage } from './tvshows';
+import { FilterModalPage } from '../filter-modal/filter-modal';
 
 @NgModule({
   declarations: [
     TvshowsPage,
-    FilterModal
+    FilterModalPage
   ],
   imports: [
     IonicPageModule.forChild(TvshowsPage),

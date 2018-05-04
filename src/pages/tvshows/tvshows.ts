@@ -5,6 +5,7 @@ import { TvshowDetailPage } from '../tvshow-detail/tvshow-detail';
 import { HomePage } from '../home/home';
 import { SettingsProvider } from '../../providers/settings/settings';
 import { FILTER } from '../../constants/api.constants';
+import { FilterModalPage } from '../filter-modal/filter-modal';
 
 @IonicPage()
 @Component({
@@ -52,7 +53,13 @@ export class TvshowsPage {
   doInfinite($scroll) {
     setTimeout(() => {
       this.page++;
-      this.apiProvider.getTvShows(this.page)
+      this.apiProvider.getWithFilter(
+        this.page,
+        'shows',
+        this.search.sort,
+        this.search.genre,
+        this.search.order
+      )
         .subscribe((response: any) => {
           for (let index = 0; index < response.length; index++) {
             let element = response[index];
@@ -64,15 +71,20 @@ export class TvshowsPage {
   }
 
   filterShow() {
-    let modalFilter = this.modal.create(FilterModal, {
+    let modalFilter = this.modal.create(FilterModalPage, {
       theme: this.selectedTheme,
-      filter: FILTER,
-      search: this.search
+      filter: {
+        genre: FILTER.genre.movie_tvshow,
+        sort: FILTER.sort.tvshow,
+        order: FILTER.order
+      },
+      search: this.search,
+      endpoint: 'shows'
     });
 
     modalFilter.onDidDismiss(data => {
       if (data != null) {
-        this.tvshows = data.tvshows;
+        this.tvshows = data.obj;
         this.search = data.search;
         this.page = 1;
         this.view.getContent().scrollToTop();
@@ -81,62 +93,4 @@ export class TvshowsPage {
 
     modalFilter.present();
   }
-
-}
-
-@Component({
-  selector: 'filter-tvshows',
-  templateUrl: 'filter.html'
-})
-export class FilterModal {
-
-  theme: any;
-  filter: any;
-  search = {
-    genre: '',
-    sort: '',
-    order: '-1',
-  };
-  movies: any = null;
-
-  constructor(
-    params: NavParams,
-    private view: ViewController,
-    private settings: SettingsProvider,
-    private api: PopcornApiProvider,
-  ) {
-    this.theme = params.data.theme;
-    this.filter = params.data.filter;
-    this.search = params.data.search;
-  }
-
-  applyFilters() {
-    this.api.getWithFilter(
-      1,
-      'tvshows',
-      this.search.sort,
-      this.search.genre,
-      this.search.order
-    )
-      .subscribe(response => {
-        this.movies = response
-        this.view.dismiss({
-          movies: this.movies,
-          search: this.search
-        });
-      });
-  }
-
-  resetFilters() {
-    this.search = {
-      genre: '',
-      sort: '',
-      order: '-1',
-    };
-  }
-
-  dismiss() {
-    this.view.dismiss();
-  }
-
 }

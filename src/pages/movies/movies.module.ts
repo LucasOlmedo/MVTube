@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { MoviesPage, FilterModal } from './movies';
+import { MoviesPage } from './movies';
+import { FilterModalPage } from '../filter-modal/filter-modal';
 
 @NgModule({
   declarations: [
     MoviesPage,
-    FilterModal 
+    FilterModalPage 
   ],
   imports: [
     IonicPageModule.forChild(MoviesPage),

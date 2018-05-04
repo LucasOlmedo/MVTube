@@ -19,7 +19,7 @@ import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { Globalization } from "@ionic-native/globalization";
 import { AboutPage } from '../pages/about/about';
 import { PopcornApiProvider } from '../providers/popcorn-api/popcorn-api';
-import { MoviesPage, FilterModal } from '../pages/movies/movies';
+import { MoviesPage } from '../pages/movies/movies';
 import { MovieDetailPage, TrailerModal } from '../pages/movie-detail/movie-detail';
 import { HelperProvider } from '../providers/helper/helper';
 import { TvshowsPage } from '../pages/tvshows/tvshows';
@@ -30,6 +30,7 @@ import { EpisodesComponent, EpisodeDetails } from '../components/episodes/episod
 import { FileTransfer } from '@ionic-native/file-transfer';
 import { File } from '@ionic-native/file';
 import { SocialSharing } from '@ionic-native/social-sharing';
+import { FilterModalPage } from '../pages/filter-modal/filter-modal';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -50,7 +51,7 @@ export function createTranslateLoader(http: HttpClient) {
     EpisodesComponent,
     EpisodeDetails,
     TrailerModal,
-    FilterModal
+    FilterModalPage
   ],
   imports: [
     BrowserModule,
@@ -80,7 +81,7 @@ export function createTranslateLoader(http: HttpClient) {
     EpisodesComponent,
     EpisodeDetails,
     TrailerModal,
-    FilterModal
+    FilterModalPage
   ],
   providers: [
     StatusBar,
