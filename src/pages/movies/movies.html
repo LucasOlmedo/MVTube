@@ -7,6 +7,9 @@
       {{'MOVIES_PAGE.PAGE_TITLE' | translate}}
     </ion-title>
     <ion-buttons end margin-right>
+      <button ion-button icon-only (click)="toogleSearch()">
+        <ion-icon [name]="searchbar ? 'close' : 'search'"></ion-icon>
+      </button>
       <button ion-button icon-only (click)="randomMovie()">
         <ion-icon name="shuffle"></ion-icon>
       </button>
@@ -15,6 +18,9 @@
       </button>
     </ion-buttons>
   </ion-navbar>
+  <ion-toolbar *ngIf="searchbar">
+    <ion-searchbar (ionInput)="filterByKeyword($event)" placeholder="{{ 'SEARCH_BY_KW' | translate}}"></ion-searchbar>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content>

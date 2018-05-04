@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController, ViewController } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, ModalController, ViewController, Content } from 'ionic-angular';
 import { PopcornApiProvider } from '../../providers/popcorn-api/popcorn-api';
 import { MovieDetailPage } from '../movie-detail/movie-detail';
 import { HomePage } from '../home/home';
@@ -14,6 +14,7 @@ import { FilterModalPage } from '../filter-modal/filter-modal';
 })
 export class MoviesPage {
 
+  @ViewChild(Content) content: Content;
   movies: any;
   singleMovie: any;
   page: number;
@@ -24,6 +25,7 @@ export class MoviesPage {
     sort: '',
     order: '-1',
   };
+  searchbar: boolean = false;
 
   constructor(
     public navCtrl: NavController,
@@ -102,5 +104,14 @@ export class MoviesPage {
     });
 
     modalFilter.present();
+  }
+
+  toogleSearch() {
+    this.searchbar = !this.searchbar; 
+    this.content.resize();
+  }
+
+  filterByKeyword($event) {
+    console.log($event);
   }
 }
