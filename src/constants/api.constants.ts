@@ -293,7 +293,7 @@ const GENRE = {
         },
         {
             value: 'Shounen Ai',
-            title: 'FILTER.GENRE.ANIME.SHONEN_AI'
+            title: 'FILTER.GENRE.ANIME.SHOUNEN_AI'
         },
     ]
 };
