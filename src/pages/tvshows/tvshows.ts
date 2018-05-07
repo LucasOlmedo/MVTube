@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController, ViewController } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, ModalController, ViewController, Content } from 'ionic-angular';
 import { PopcornApiProvider } from '../../providers/popcorn-api/popcorn-api';
 import { TvshowDetailPage } from '../tvshow-detail/tvshow-detail';
 import { HomePage } from '../home/home';
@@ -14,6 +14,7 @@ import { FilterModalPage } from '../filter-modal/filter-modal';
 })
 export class TvshowsPage {
 
+  @ViewChild(Content) content: Content;
   tvshows: any;
   singleShow: any;
   page: any;
@@ -24,6 +25,8 @@ export class TvshowsPage {
     sort: '',
     order: '-1',
   };
+  searchbar: boolean = false;
+  doScroll: boolean = true;
 
   constructor(
     public navCtrl: NavController,
@@ -33,9 +36,9 @@ export class TvshowsPage {
     private settings: SettingsProvider,
     private view: ViewController
   ) {
+    this.timestamp = Math.floor(Date.now() / 1000);
     this.tvshows = navParams.get('tvshows');
     this.page = 1;
-    this.timestamp = Math.floor(Date.now() / 1000);
     settings.getActiveTheme()
       .subscribe(theme => this.selectedTheme = theme);
   }
@@ -92,5 +95,29 @@ export class TvshowsPage {
     });
 
     modalFilter.present();
+  }
+
+  toogleSearch() {
+    this.searchbar = !this.searchbar;
+    this.content.resize();
+  }
+
+  filterByKeyword($event) {
+    let key = $event.target.value;
+    this.apiProvider.getWithFilter(1, 'shows', null, null, null, key)
+      .subscribe(response => {
+        if ($event.target.value == '') {
+          this.doScroll = true;
+          this.page = 1;
+        } else {
+          this.doScroll = false;
+          this.view.getContent().scrollToTop();
+        }
+        if ($event instanceof MouseEvent) {
+          this.doScroll = true;
+          this.page = 1;
+        }
+        this.tvshows = response;
+      });
   }
 }
