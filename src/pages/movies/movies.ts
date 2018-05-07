@@ -26,6 +26,7 @@ export class MoviesPage {
     order: '-1',
   };
   searchbar: boolean = false;
+  doScroll: boolean = true;
 
   constructor(
     public navCtrl: NavController,
@@ -107,11 +108,26 @@ export class MoviesPage {
   }
 
   toogleSearch() {
-    this.searchbar = !this.searchbar; 
+    this.searchbar = !this.searchbar;
     this.content.resize();
   }
 
   filterByKeyword($event) {
-    console.log($event);
+    let key = $event.target.value;
+    this.apiProvider.getWithFilter(1, 'movies', null, null, null, key)
+      .subscribe(response => {
+        if ($event.target.value == '') {
+          this.doScroll = true;
+          this.page = 1;
+        } else {
+          this.doScroll = false;
+          this.view.getContent().scrollToTop();
+        }
+        if ($event instanceof MouseEvent) {
+          this.doScroll = true;
+          this.page = 1;
+        }
+        this.movies = response;
+      });
   }
 }
