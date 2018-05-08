@@ -24,8 +24,8 @@
   }
 
   .button-theme {
-    background-color: color($colors, 'danger');
     color: white;
+    background-color: color($colors, 'danger');
   }
 
   .button-theme.activated {
@@ -37,8 +37,8 @@
   }
 
   .season-card-content {
-    background: white;
     color: black;
+    background: white;
   }
   
   .episode-info-title {
@@ -65,12 +65,12 @@ ion-modal {
   }
 
   .modal-alert {
-    position: absolute;
     top: 20%;
     left: 10%;
-    display: block;
     width: 80%;
     height: 51.6%;
+    display: block;
+    position: absolute;
     box-shadow: 0px 0px 0px 10000px rgba(0, 0, 0, 0.5);
   }
 

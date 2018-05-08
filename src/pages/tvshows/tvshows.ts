@@ -1,10 +1,10 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController, ViewController, Content } from 'ionic-angular';
-import { PopcornApiProvider } from '../../providers/popcorn-api/popcorn-api';
-import { TvshowDetailPage } from '../tvshow-detail/tvshow-detail';
-import { SettingsProvider } from '../../providers/settings/settings';
 import { FILTER } from '../../constants/api.constants';
 import { FilterModalPage } from '../filter-modal/filter-modal';
+import { TvshowDetailPage } from '../tvshow-detail/tvshow-detail';
+import { SettingsProvider } from '../../providers/settings/settings';
+import { PopcornApiProvider } from '../../providers/popcorn-api/popcorn-api';
+import { IonicPage, NavController, NavParams, ModalController, ViewController, Content } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -14,30 +14,31 @@ import { FilterModalPage } from '../filter-modal/filter-modal';
 export class TvshowsPage {
 
   @ViewChild(Content) content: Content;
-  tvshows: any;
-  singleShow: any;
+
   page: any;
+  tvshows: any;
   timestamp: any;
+  singleShow: any;
   selectedTheme: any;
   search = {
     genre: '',
     sort: '',
     order: '-1',
   };
-  searchbar: boolean = false;
   doScroll: boolean = true;
+  searchbar: boolean = false;
 
   constructor(
-    public navCtrl: NavController,
     public navParams: NavParams,
-    private apiProvider: PopcornApiProvider,
+    private view: ViewController,
+    public navCtrl: NavController,
     private modal: ModalController,
     private settings: SettingsProvider,
-    private view: ViewController
+    private apiProvider: PopcornApiProvider,
   ) {
-    this.timestamp = Math.floor(Date.now() / 1000);
-    this.tvshows = navParams.get('tvshows');
     this.page = 1;
+    this.tvshows = navParams.get('tvshows');
+    this.timestamp = Math.floor(Date.now() / 1000);
     this.settings.getActiveTheme()
       .subscribe(theme => this.selectedTheme = theme);
   }
@@ -103,7 +104,14 @@ export class TvshowsPage {
 
   filterByKeyword($event) {
     let key = $event.target.value;
-    this.apiProvider.getWithFilter(1, 'shows', null, null, null, key)
+    this.apiProvider.getWithFilter(
+      1,
+      'shows',
+      this.search.sort,
+      this.search.genre,
+      this.search.order,
+      key
+    )
       .subscribe(response => {
         if ($event.target.value == '') {
           this.doScroll = true;

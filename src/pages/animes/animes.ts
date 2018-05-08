@@ -1,11 +1,10 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController, ViewController } from 'ionic-angular';
-import { PopcornApiProvider } from '../../providers/popcorn-api/popcorn-api';
+import { Component, ViewChild } from '@angular/core';
+import { FILTER } from '../../constants/api.constants';
 import { AnimeDetailPage } from '../anime-detail/anime-detail';
-import { HomePage } from '../home/home';
 import { FilterModalPage } from '../filter-modal/filter-modal';
 import { SettingsProvider } from '../../providers/settings/settings';
-import { FILTER } from '../../constants/api.constants';
+import { PopcornApiProvider } from '../../providers/popcorn-api/popcorn-api';
+import { IonicPage, NavController, NavParams, ModalController, ViewController, Content } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -14,29 +13,32 @@ import { FILTER } from '../../constants/api.constants';
 })
 export class AnimesPage {
 
-  animes: any;
-  singleAnime: any;
+  @ViewChild(Content) content: Content;
   page: any;
+  animes: any;
   timestamp: any;
+  singleAnime: any;
   selectedTheme: any;
   search = {
-    genre: '',
     sort: '',
+    genre: '',
     order: '-1',
   };
+  doScroll: boolean = true;
+  searchbar: boolean = false;
 
   constructor(
-    public navCtrl: NavController,
     public navParams: NavParams,
-    private apiProvider: PopcornApiProvider,
+    private view: ViewController,
+    public navCtrl: NavController,
     private modal: ModalController,
     private settings: SettingsProvider,
-    private view: ViewController
+    private apiProvider: PopcornApiProvider,
   ) {
-    this.animes = navParams.get('animes');
     this.page = 1;
+    this.animes = navParams.get('animes');
     this.timestamp = Math.floor(Date.now() / 1000);
-    settings.getActiveTheme()
+    this.settings.getActiveTheme()
       .subscribe(theme => this.selectedTheme = theme);
   }
 
@@ -94,4 +96,34 @@ export class AnimesPage {
     modalFilter.present();
   }
 
+  toogleSearch() {
+    this.searchbar = !this.searchbar;
+    this.content.resize();
+  }
+
+  filterByKeyword($event) {
+    let key = $event.target.value;
+    this.apiProvider.getWithFilter(
+      1,
+      'animes',
+      this.search.sort,
+      this.search.genre,
+      this.search.order,
+      key
+    )
+      .subscribe(response => {
+        if ($event.target.value == '') {
+          this.doScroll = true;
+          this.page = 1;
+        } else {
+          this.doScroll = false;
+          this.view.getContent().scrollToTop();
+        }
+        if ($event instanceof MouseEvent) {
+          this.doScroll = true;
+          this.page = 1;
+        }
+        this.animes = response;
+      });
+  }
 }

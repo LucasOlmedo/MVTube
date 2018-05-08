@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { HelperProvider } from '../../providers/helper/helper';
-import { SettingsProvider } from '../../providers/settings/settings';
 import { WEBSITE } from '../../constants/api.constants';
+import { HelperProvider } from '../../providers/helper/helper';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { SettingsProvider } from '../../providers/settings/settings';
 
 @IonicPage()
 @Component({
@@ -19,17 +19,17 @@ export class TvshowDetailPage {
     four: '',
     five: '',
   };
-  timestamp: any;
   episodes: any;
+  timestamp: any;
 
   constructor(
-    public navCtrl: NavController,
     public navParams: NavParams,
+    public navCtrl: NavController,
     public helper: HelperProvider,
-    private settings: SettingsProvider
+    private settings: SettingsProvider,
   ) {
-    this.timestamp = Math.floor(Date.now() / 1000);
     this.tvshow = navParams.get('tvshow');
+    this.timestamp = Math.floor(Date.now() / 1000);
     this.star = this.helper.transformRating(this.tvshow.rating.percentage, this.star);
     this.episodes = this.groupEpisodesBySeason(
       this.tvshow.episodes,

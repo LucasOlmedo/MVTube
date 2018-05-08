@@ -4,33 +4,35 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { AboutPage } from '../pages/about/about';
+import { AnimesPage } from '../pages/animes/animes';
+import { MoviesPage } from '../pages/movies/movies';
+import { TvshowsPage } from '../pages/tvshows/tvshows';
+import { SettingsPage } from '../pages/settings/settings';
+import { FilterModalPage } from '../pages/filter-modal/filter-modal';
+import { AnimeDetailPage } from '../pages/anime-detail/anime-detail';
+import { TvshowDetailPage } from '../pages/tvshow-detail/tvshow-detail';
+import { MovieDetailPage, TrailerModal } from '../pages/movie-detail/movie-detail';
+
+import { EpisodesComponent, EpisodeDetails } from '../components/episodes/episodes';
+
+import { HelperProvider } from '../providers/helper/helper';
+import { SettingsProvider } from '../providers/settings/settings';
+import { PopcornApiProvider } from '../providers/popcorn-api/popcorn-api';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { SettingsProvider } from '../providers/settings/settings';
 
 import { IonicStorageModule } from "@ionic/storage";
-import { SettingsPage } from '../pages/settings/settings';
 
+import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
-import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 
-import { Globalization } from "@ionic-native/globalization";
-import { AboutPage } from '../pages/about/about';
-import { PopcornApiProvider } from '../providers/popcorn-api/popcorn-api';
-import { MoviesPage } from '../pages/movies/movies';
-import { MovieDetailPage, TrailerModal } from '../pages/movie-detail/movie-detail';
-import { HelperProvider } from '../providers/helper/helper';
-import { TvshowsPage } from '../pages/tvshows/tvshows';
-import { AnimesPage } from '../pages/animes/animes';
-import { TvshowDetailPage } from '../pages/tvshow-detail/tvshow-detail';
-import { AnimeDetailPage } from '../pages/anime-detail/anime-detail';
-import { EpisodesComponent, EpisodeDetails } from '../components/episodes/episodes';
-import { FileTransfer } from '@ionic-native/file-transfer';
 import { File } from '@ionic-native/file';
+import { FileTransfer } from '@ionic-native/file-transfer';
+import { Globalization } from "@ionic-native/globalization";
 import { SocialSharing } from '@ionic-native/social-sharing';
-import { FilterModalPage } from '../pages/filter-modal/filter-modal';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -40,18 +42,18 @@ export function createTranslateLoader(http: HttpClient) {
   declarations: [
     MyApp,
     HomePage,
-    SettingsPage,
     AboutPage,
     MoviesPage,
-    MovieDetailPage,
-    TvshowsPage,
-    TvshowDetailPage,
     AnimesPage,
-    AnimeDetailPage,
-    EpisodesComponent,
-    EpisodeDetails,
+    TvshowsPage,
     TrailerModal,
-    FilterModalPage
+    SettingsPage,
+    EpisodeDetails,
+    MovieDetailPage,
+    AnimeDetailPage,
+    FilterModalPage,
+    TvshowDetailPage,
+    EpisodesComponent,
   ],
   imports: [
     BrowserModule,
@@ -70,31 +72,31 @@ export function createTranslateLoader(http: HttpClient) {
   entryComponents: [
     MyApp,
     HomePage,
-    SettingsPage,
     AboutPage,
     MoviesPage,
-    MovieDetailPage,
-    TvshowsPage,
-    TvshowDetailPage,
     AnimesPage,
-    AnimeDetailPage,
-    EpisodesComponent,
-    EpisodeDetails,
+    TvshowsPage,
     TrailerModal,
-    FilterModalPage
+    SettingsPage,
+    EpisodeDetails,
+    MovieDetailPage,
+    AnimeDetailPage,
+    FilterModalPage,
+    TvshowDetailPage,
+    EpisodesComponent,
   ],
   providers: [
+    File,
     StatusBar,
     SplashScreen,
-    { provide: ErrorHandler, useClass: IonicErrorHandler },
-    SettingsProvider,
-    Globalization,
     FileTransfer,
-    File,
-    PopcornApiProvider,
-    HelperProvider,
+    Globalization,
     SocialSharing,
-    URLSearchParams
+    HelperProvider,
+    URLSearchParams,
+    SettingsProvider,
+    PopcornApiProvider,
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
   ]
 })
 export class AppModule { }

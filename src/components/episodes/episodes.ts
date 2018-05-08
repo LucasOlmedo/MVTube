@@ -1,6 +1,6 @@
+import { SettingsProvider } from '../../providers/settings/settings';
 import { Component, ViewChild, Renderer, Input } from '@angular/core';
 import { NavParams, ViewController, PopoverController } from 'ionic-angular';
-import { SettingsProvider } from '../../providers/settings/settings';
 
 @Component({
   selector: 'episodes',
@@ -17,7 +17,7 @@ export class EpisodesComponent {
     private render: Renderer,
     public navParams: NavParams,
     private popover: PopoverController,
-    private settings: SettingsProvider
+    private settings: SettingsProvider,
   ) {
     this.expanded = false;
     this.settings.getActiveTheme()
@@ -83,11 +83,11 @@ export class EpisodeDetails {
   theme: any;
 
   constructor(
+    private navParams: NavParams,
     public viewCtrl: ViewController,
-    private navParams: NavParams
   ) {
-    this.description = navParams.data.description;
     this.title = navParams.data.title;
     this.theme = navParams.data.theme;
+    this.description = navParams.data.description;
   }
 }

@@ -14,9 +14,9 @@ episodes {
     }
 
     .card-content {
-        padding: 0px 10px;
         max-height: 0;
         overflow: hidden;
+        padding: 0px 10px;
     }
 
     .fab[mini] {
@@ -29,7 +29,7 @@ episodes {
     }
 
     .icon-accordion {
-        position: relative;
         right: -25%;
+        position: relative;
     }
 }

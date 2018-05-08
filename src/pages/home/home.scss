@@ -6,10 +6,10 @@
     }
 
     .card-img-button{
+        margin: 0;
+        padding: 0;
         height: 100%;
         background: transparent;
-        padding: 0;
-        margin: 0;
     }
 
     .card-img {
@@ -17,20 +17,20 @@
     }
 
     .card-title {
-        position: absolute;
         top: 36%;
-        font-size: 2.0em;
         width: 100%;
-        font-weight: bold;
         color: #fff;
+        font-size: 2.0em;
+        font-weight: bold;
+        position: absolute;
     }
 
     .card-subtitle {
-        font-size: 1.0em;
-        position: absolute;
         top: 52%;
         width: 100%;
         color: #fff;
+        font-size: 1.0em;
+        position: absolute;
     }
 
 }

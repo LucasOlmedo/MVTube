@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { SettingsProvider } from '../../providers/settings/settings';
 import { PopcornApiProvider } from '../../providers/popcorn-api/popcorn-api';
+import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -21,11 +21,11 @@ export class FilterModalPage {
   endpoint: string = '';
 
   constructor(
-    public navCtrl: NavController,
     public params: NavParams,
-    private settings: SettingsProvider,
+    private view: ViewController,
+    public navCtrl: NavController,
     private api: PopcornApiProvider,
-    private view: ViewController
+    private settings: SettingsProvider,
   ) {
     this.theme = params.data.theme;
     this.filter = params.data.filter;

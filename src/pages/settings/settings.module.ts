@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { IonicPageModule, Platform } from 'ionic-angular';
 import { SettingsPage } from './settings';
 import { TranslateModule } from '@ngx-translate/core';
+import { IonicPageModule, Platform } from 'ionic-angular';
 import { SettingsProvider } from '../../providers/settings/settings';
 
 @NgModule({

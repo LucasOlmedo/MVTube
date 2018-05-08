@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs/Rx';
 import { Storage } from '@ionic/storage';
+import { BehaviorSubject } from 'rxjs/Rx';
+import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Globalization } from '@ionic-native/globalization';
 import { defaultLang, availableLang, systemOptions } from "../../constants/settings.constants";
@@ -8,9 +8,9 @@ import { defaultLang, availableLang, systemOptions } from "../../constants/setti
 @Injectable()
 export class SettingsProvider {
 
-  private theme: BehaviorSubject<String> = new BehaviorSubject('light-theme');
-  public language = systemOptions.systemLang;
   public availableLanguages = availableLang;
+  public language = systemOptions.systemLang;
+  private theme: BehaviorSubject<String> = new BehaviorSubject('light-theme');
 
   constructor(
     private storage: Storage,

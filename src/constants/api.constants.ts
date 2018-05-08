@@ -1,7 +1,7 @@
 import { SettingsProvider } from "../providers/settings/settings";
 
-export const API_URL = 'https://tv-v2.api-fetch.website/';
 export const WEBSITE = 'https://popcorntime.sh/';
+export const API_URL = 'https://tv-v2.api-fetch.website/';
 
 const GENRE = {
     movie_tvshow: [
@@ -371,7 +371,7 @@ const ORDER = [
 ];
 
 export const FILTER = {
-    genre: GENRE,
     sort: SORT,
-    order: ORDER
+    genre: GENRE,
+    order: ORDER,
 }

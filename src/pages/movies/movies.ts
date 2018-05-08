@@ -1,11 +1,11 @@
-import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController, ViewController, Content } from 'ionic-angular';
-import { PopcornApiProvider } from '../../providers/popcorn-api/popcorn-api';
-import { MovieDetailPage } from '../movie-detail/movie-detail';
 import { HomePage } from '../home/home';
-import { SettingsProvider } from '../../providers/settings/settings';
+import { Component, ViewChild } from '@angular/core';
 import { FILTER } from "../../constants/api.constants";
+import { MovieDetailPage } from '../movie-detail/movie-detail';
 import { FilterModalPage } from '../filter-modal/filter-modal';
+import { SettingsProvider } from '../../providers/settings/settings';
+import { PopcornApiProvider } from '../../providers/popcorn-api/popcorn-api';
+import { IonicPage, NavController, NavParams, ModalController, ViewController, Content } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -15,30 +15,31 @@ import { FilterModalPage } from '../filter-modal/filter-modal';
 export class MoviesPage {
 
   @ViewChild(Content) content: Content;
+
   movies: any;
-  singleMovie: any;
   page: number;
   timestamp: any;
+  singleMovie: any;
   selectedTheme: any;
   search = {
     genre: '',
     sort: '',
     order: '-1',
   };
-  searchbar: boolean = false;
   doScroll: boolean = true;
+  searchbar: boolean = false;
 
   constructor(
-    public navCtrl: NavController,
     public navParams: NavParams,
-    private apiProvider: PopcornApiProvider,
+    private view: ViewController,
+    public navCtrl: NavController,
     private modal: ModalController,
     private settings: SettingsProvider,
-    private view: ViewController
+    private apiProvider: PopcornApiProvider,
   ) {
-    this.timestamp = Math.floor(Date.now() / 1000);
-    this.movies = navParams.get('movies');
     this.page = 1;
+    this.movies = navParams.get('movies');
+    this.timestamp = Math.floor(Date.now() / 1000);
     settings.getActiveTheme()
       .subscribe(theme => this.selectedTheme = theme);
   }
@@ -108,13 +109,20 @@ export class MoviesPage {
   }
 
   toogleSearch() {
-    this.searchbar = !this.searchbar;
     this.content.resize();
+    this.searchbar = !this.searchbar;
   }
 
   filterByKeyword($event) {
     let key = $event.target.value;
-    this.apiProvider.getWithFilter(1, 'movies', null, null, null, key)
+    this.apiProvider.getWithFilter(
+      1,
+      'movies',
+      this.search.sort,
+      this.search.genre,
+      this.search.order,
+      key
+    )
       .subscribe(response => {
         if ($event.target.value == '') {
           this.doScroll = true;

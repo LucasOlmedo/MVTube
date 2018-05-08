@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
-import { SettingsProvider } from '../../providers/settings/settings';
 import { TranslateService } from '@ngx-translate/core';
+import { SettingsProvider } from '../../providers/settings/settings';
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -10,19 +10,19 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class SettingsPage {
 
-  selectedTheme: String;
-  selectedLang: any;
   languages: any;
+  selectedLang: any;
+  selectedTheme: String;
 
   constructor(
-    public navCtrl: NavController,
     public navParams: NavParams,
-    private settingsProvider: SettingsProvider,
+    public navCtrl: NavController,
     private toast: ToastController,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private settingsProvider: SettingsProvider,
   ) {
-    this.selectedLang = settingsProvider.language;
     this.languages = settingsProvider.availableLanguages;
+    this.selectedLang = settingsProvider.language;
     this.settingsProvider.getActiveLang()
       .then(value => {
         value != null

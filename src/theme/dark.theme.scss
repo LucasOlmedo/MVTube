@@ -1,17 +1,17 @@
 .dark-theme {
   ion-content {
-    background-color: #2b2b2b;
     color: white;
+    background-color: #2b2b2b;
   }
 
   ion-item-divider {
-    background-color: #2b2b2b;
     color: white;
+    background-color: #2b2b2b;
   }
 
   ion-list .item {
-    background-color: #2b2b2b;
     color: white;
+    background-color: #2b2b2b;
   }
 
   ion-card {
@@ -19,8 +19,8 @@
   }
 
   .season-card-content {
-    background-color: #2b2b2b;
     color: white;
+    background-color: #2b2b2b;
   }
 
   small {
@@ -32,8 +32,8 @@
   }
 
   .button-theme {
-    background-color: color($colors, 'light');
     color: #424242;
+    background-color: color($colors, 'light');
   }
   .button-theme.activated {
     background-color: color($colors, 'light');
@@ -97,12 +97,12 @@ ion-modal {
   }
 
   .modal-alert {
-    position: absolute;
     top: 20%;
     left: 10%;
-    display: block;
     width: 80%;
     height: 51.6%;
+    display: block;
+    position: absolute;
     box-shadow: 0px 0px 0px 10000px rgba(0, 0, 0, 0.5);
   }
 

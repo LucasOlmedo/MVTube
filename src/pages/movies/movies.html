@@ -22,7 +22,6 @@
     <ion-searchbar (ionInput)="filterByKeyword($event)" placeholder="{{ 'SEARCH_BY_KW' | translate}}"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
   <ion-grid>
     <ion-row>
@@ -38,7 +37,6 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-
   <ion-infinite-scroll *ngIf="doScroll" (ionInfinite)="doInfinite($event)">
     <ion-infinite-scroll-content></ion-infinite-scroll-content>
   </ion-infinite-scroll>

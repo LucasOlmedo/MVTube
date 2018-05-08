@@ -1,6 +1,6 @@
+import { TvshowsPage } from './tvshows';
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { TvshowsPage } from './tvshows';
 import { FilterModalPage } from '../filter-modal/filter-modal';
 
 @NgModule({

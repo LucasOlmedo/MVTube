@@ -3,15 +3,15 @@
 }
 
 .fanart button {
-    position: absolute;
-    bottom: -15%;
     right: 10px;
+    bottom: -15%;
+    position: absolute;
 }
 
 .movie-trailer {
+    top: 25%;
     width: 100%;
     position: absolute;
-    top: 25%;
 }
 
 .btn-cancel-download {

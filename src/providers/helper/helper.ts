@@ -1,25 +1,25 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { FileTransfer, FileTransferObject } from "@ionic-native/file-transfer";
 import { File } from "@ionic-native/file";
-import { ActionSheetController, ToastController } from 'ionic-angular';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { SettingsProvider } from '../settings/settings';
 import { SocialSharing } from '@ionic-native/social-sharing';
+import { ActionSheetController, ToastController } from 'ionic-angular';
+import { FileTransfer, FileTransferObject } from "@ionic-native/file-transfer";
 
 @Injectable()
 export class HelperProvider {
 
-  fileTransfer: FileTransferObject;
   timestamp: any;
+  fileTransfer: FileTransferObject;
 
   constructor(
-    public httpClient: HttpClient,
-    private transfer: FileTransfer,
     private file: File,
-    private actionSheet: ActionSheetController,
+    public httpClient: HttpClient,
+    private social: SocialSharing,
+    private transfer: FileTransfer,
     private toast: ToastController,
     private settings: SettingsProvider,
-    private social: SocialSharing
+    private actionSheet: ActionSheetController,
   ) {
     this.fileTransfer = this.transfer.create();
   }

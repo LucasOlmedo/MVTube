@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { MoviesPage } from '../movies/movies';
+import { AnimesPage } from '../animes/animes';
+import { TvshowsPage } from '../tvshows/tvshows';
 import { TranslateService } from '@ngx-translate/core';
 import { SettingsProvider } from '../../providers/settings/settings';
 import { PopcornApiProvider } from '../../providers/popcorn-api/popcorn-api';
-import { MoviesPage } from '../movies/movies';
-import { TvshowsPage } from '../tvshows/tvshows';
-import { AnimesPage } from '../animes/animes';
 
 @Component({
   selector: 'page-home',
@@ -13,16 +13,16 @@ import { AnimesPage } from '../animes/animes';
 })
 export class HomePage {
 
-  selectedLang: any;
   movies: any;
-  tvShows: any;
   animes: any;
+  tvShows: any;
+  selectedLang: any;
 
   constructor(
     public navCtrl: NavController,
+    private api: PopcornApiProvider,
     private translate: TranslateService,
     private settingsProvider: SettingsProvider,
-    private api: PopcornApiProvider
   ) {
     this.settingsProvider.getActiveLang()
       .then(lang => {

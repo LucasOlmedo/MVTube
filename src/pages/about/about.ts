@@ -8,12 +8,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AboutPage {
 
-  developer = { value: 'Lucas Olmedo' };
   appVersion = { value: '1.0.0' };
+  developer = { value: 'Lucas Olmedo' };
 
   constructor(
-    public navCtrl: NavController,
     public navParams: NavParams,
+    public navCtrl: NavController,
   ) {
     
   }

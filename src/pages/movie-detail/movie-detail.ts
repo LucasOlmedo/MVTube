@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController, ViewController } from 'ionic-angular';
-import { HelperProvider } from '../../providers/helper/helper';
-import { DomSanitizer } from '@angular/platform-browser';
-import { SettingsProvider } from '../../providers/settings/settings';
 import { WEBSITE } from "../../constants/api.constants";
+import { DomSanitizer } from '@angular/platform-browser';
+import { HelperProvider } from '../../providers/helper/helper';
+import { SettingsProvider } from '../../providers/settings/settings';
+import { IonicPage, NavController, NavParams, ModalController, ViewController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -24,14 +24,14 @@ export class MovieDetailPage {
   selectedTheme: any;
 
   constructor(
-    public navCtrl: NavController,
     public navParams: NavParams,
+    public navCtrl: NavController,
     private helper: HelperProvider,
     private modal: ModalController,
     private settings: SettingsProvider,
   ) {
-    this.timestamp = Math.floor(Date.now() / 1000);
     this.movie = this.navParams.get('movie');
+    this.timestamp = Math.floor(Date.now() / 1000);
     this.star = this.helper.transformRating(this.movie.rating.percentage, this.star);
     this.settings.getActiveTheme()
       .subscribe(value => this.selectedTheme = value);
@@ -55,8 +55,8 @@ export class MovieDetailPage {
   }
 
   shareItem(movie) {
-    let title = this.settings.instantTranslate('SHARING.MOVIE_TITLE');
     let image = `${movie.images.fanart}?${this.timestamp}`;
+    let title = this.settings.instantTranslate('SHARING.MOVIE_TITLE');
     let message = `${movie.title}\n(${movie.year} - ${movie.runtime} min)\n\n${movie.synopsis}\n\n${title}\n${WEBSITE}`;
     this.helper.share(
       message,
@@ -95,15 +95,14 @@ export class TrailerModal {
 
   constructor(
     params: NavParams,
+    domSanitizer: DomSanitizer,
     private view: ViewController,
-    domSanitizer: DomSanitizer
   ) {
-    this.url = domSanitizer.bypassSecurityTrustResourceUrl(params.get('url'));
     this.theme = params.get('theme');
+    this.url = domSanitizer.bypassSecurityTrustResourceUrl(params.get('url'));
   }
 
   dismiss() {
     this.view.dismiss();
   }
-
 }
