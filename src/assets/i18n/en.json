@@ -47,6 +47,9 @@
     "TRAILER": "Trailer",
     "PLAY": "Play now"
   },
+  "FAVORITE_PAGE": {
+    "PAGE_TITLE": "Favorites"
+  },
   "EPISODES": {
     "SEASON": "Season"
   },

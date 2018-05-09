@@ -9,6 +9,7 @@ import { AnimesPage } from '../pages/animes/animes';
 import { MoviesPage } from '../pages/movies/movies';
 import { TvshowsPage } from '../pages/tvshows/tvshows';
 import { SettingsPage } from '../pages/settings/settings';
+import { FavoritePage } from '../pages/favorite/favorite';
 import { FilterModalPage } from '../pages/filter-modal/filter-modal';
 import { AnimeDetailPage } from '../pages/anime-detail/anime-detail';
 import { TvshowDetailPage } from '../pages/tvshow-detail/tvshow-detail';
@@ -54,6 +55,7 @@ export function createTranslateLoader(http: HttpClient) {
     FilterModalPage,
     TvshowDetailPage,
     EpisodesComponent,
+    FavoritePage,
   ],
   imports: [
     BrowserModule,
@@ -78,6 +80,7 @@ export function createTranslateLoader(http: HttpClient) {
     TvshowsPage,
     TrailerModal,
     SettingsPage,
+    FavoritePage,
     EpisodeDetails,
     MovieDetailPage,
     AnimeDetailPage,

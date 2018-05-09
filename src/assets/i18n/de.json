@@ -47,6 +47,9 @@
     "TRAILER": "Filmtrailer",
     "PLAY": "Jetzt ansehen"
   },
+  "FAVORITE_PAGE": {
+    "PAGE_TITLE": "Favoriten"
+  },
   "EPISODES": {
     "SEASON": "Jahreszeit"
   },

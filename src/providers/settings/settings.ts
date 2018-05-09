@@ -93,4 +93,16 @@ export class SettingsProvider {
   public instantTranslate(arg) {
     return this.translate.instant(arg);
   }
+
+  public getAllFavorites() {
+    return this.storage.get('favorites');
+  }
+
+  public setFavorites(key, item) {
+    return this.storage.set('favorites', item);
+  }
+
+  public removeFavorite(key) {
+    return this.storage.remove(`favorites[${key}]`);
+  }
 }

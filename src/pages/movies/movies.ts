@@ -40,7 +40,7 @@ export class MoviesPage {
     this.page = 1;
     this.movies = navParams.get('movies');
     this.timestamp = Math.floor(Date.now() / 1000);
-    settings.getActiveTheme()
+    this.settings.getActiveTheme()
       .subscribe(theme => this.selectedTheme = theme);
   }
 

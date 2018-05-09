@@ -22,6 +22,7 @@ export class MovieDetailPage {
   };
   timestamp: any;
   selectedTheme: any;
+  favorite: boolean = false;
 
   constructor(
     public navParams: NavParams,
@@ -35,6 +36,16 @@ export class MovieDetailPage {
     this.star = this.helper.transformRating(this.movie.rating.percentage, this.star);
     this.settings.getActiveTheme()
       .subscribe(value => this.selectedTheme = value);
+    this.settings.getAllFavorites()
+      .then(response => {
+        console.log(response);
+        if (response != null) {
+          let match = response.filter(item => item == this.movie._id);
+          if (match) {
+            this.favorite = true;
+          }
+        }
+      });
   }
 
   formatGenre(gen, array) {
@@ -65,6 +76,19 @@ export class MovieDetailPage {
     );
   }
 
+  favoriteItem(movie) {
+    if (this.favorite) {
+      this.settings.removeFavorite(movie._id)
+        .then(() => {
+          this.favorite = false;
+        });
+    } else {
+      this.settings.setFavorites(movie._id, movie)
+        .then(() => {
+          this.favorite = true;
+        });
+    }
+  }
 }
 
 @Component({

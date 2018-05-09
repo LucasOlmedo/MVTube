@@ -1,3 +1,4 @@
+import { Storage } from '@ionic/storage';
 import { Injectable } from '@angular/core';
 import { API_URL } from '../../constants/api.constants';
 import { HttpClient, HttpParams } from '@angular/common/http';
@@ -10,7 +11,8 @@ export class PopcornApiProvider {
   private timestamp: any;
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private storage: Storage,
   ) {
     this.url = API_URL;
   }

@@ -9,6 +9,7 @@ import { SettingsPage } from '../pages/settings/settings';
 
 import { TranslateService } from '@ngx-translate/core';
 import { SettingsProvider } from '../providers/settings/settings';
+import { FavoritePage } from '../pages/favorite/favorite';
 
 @Component({
   templateUrl: 'app.html'
@@ -33,6 +34,7 @@ export class MyApp {
 
     this.pages = [
       { title: 'HOME_PAGE', component: HomePage },
+      { title: 'FAVORITE_PAGE', component: FavoritePage },
       { title: 'SETTINGS_PAGE', component: SettingsPage },
       { title: 'ABOUT_PAGE', component: AboutPage },
     ];
