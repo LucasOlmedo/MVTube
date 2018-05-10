@@ -94,15 +94,11 @@ export class SettingsProvider {
     return this.translate.instant(arg);
   }
 
-  public getAllFavorites() {
-    return this.storage.get('favorites');
+  public getAllFavorites(key) {
+    return this.storage.get(`favorites.${key}`);
   }
 
   public setFavorites(key, item) {
-    return this.storage.set('favorites', item);
-  }
-
-  public removeFavorite(key) {
-    return this.storage.remove(`favorites[${key}]`);
+    return this.storage.set(`favorites.${key}`, item);
   }
 }

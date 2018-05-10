@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-buttons end margin-right>
-      <button ion-button icon-only (click)="favoriteItem(movie)">
+      <button ion-button icon-only (click)="toggleFavorite(movie)">
         <ion-icon name="{{favorite ? 'star' : 'star-outline'}}" color="{{favorite ? 'sunny' : ''}}"></ion-icon>
       </button>
       <button ion-button icon-only (click)="shareItem(movie)">

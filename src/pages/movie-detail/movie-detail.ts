@@ -36,13 +36,14 @@ export class MovieDetailPage {
     this.star = this.helper.transformRating(this.movie.rating.percentage, this.star);
     this.settings.getActiveTheme()
       .subscribe(value => this.selectedTheme = value);
-    this.settings.getAllFavorites()
+    this.settings.getAllFavorites('movies')
       .then(response => {
-        console.log(response);
         if (response != null) {
-          let match = response.filter(item => item == this.movie._id);
-          if (match) {
+          let match = response.filter(item => item._id == this.movie._id);
+          if (match.length > 0) {
             this.favorite = true;
+          } else {
+            this.favorite = false;
           }
         }
       });
@@ -76,18 +77,53 @@ export class MovieDetailPage {
     );
   }
 
-  favoriteItem(movie) {
+  toggleFavorite(movie) {
     if (this.favorite) {
-      this.settings.removeFavorite(movie._id)
-        .then(() => {
-          this.favorite = false;
-        });
+      this.unfavoriteItem(movie)
     } else {
-      this.settings.setFavorites(movie._id, movie)
-        .then(() => {
-          this.favorite = true;
-        });
+      this.favoriteItem(movie);
     }
+  }
+
+  public favoriteItem(item) {
+    this.settings.getAllFavorites('movies')
+      .then(response => {
+        if (response != null) {
+          let match = response.filter(value => value._id == item._id);
+          if (match.length == 0) {
+            response.push(item);
+            this.settings.setFavorites('movies', response)
+              .then(() => {
+                this.favorite = true;
+              });
+          } else {
+            this.favorite = true;
+          }
+        } else {
+          let favorites = [];
+          favorites.push(item);
+          this.settings.setFavorites('movies', favorites)
+            .then(() => {
+              this.favorite = true;
+            });
+        }
+      });
+  }
+
+  public unfavoriteItem(item) {
+    this.settings.getAllFavorites('movies')
+      .then(response => {
+        let match = response.filter(value => value._id == item._id);
+        if (match.length > 0) {
+          let mapped = response.filter(map => map._id != item._id);
+          this.settings.setFavorites('movies', mapped)
+            .then(() => {
+              this.favorite = false;
+            });
+        } else {
+          this.favorite = false;
+        }
+      });
   }
 }
 

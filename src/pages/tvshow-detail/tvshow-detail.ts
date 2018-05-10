@@ -21,6 +21,7 @@ export class TvshowDetailPage {
   };
   episodes: any;
   timestamp: any;
+  favorite: boolean = false;
 
   constructor(
     public navParams: NavParams,
@@ -35,6 +36,17 @@ export class TvshowDetailPage {
       this.tvshow.episodes,
       this.tvshow.num_seasons
     );
+    this.settings.getAllFavorites('shows')
+      .then(response => {
+        if (response != null) {
+          let match = response.filter(item => item._id == this.tvshow._id);
+          if (match.length > 0) {
+            this.favorite = true;
+          } else {
+            this.favorite = false;
+          }
+        }
+      });
   }
 
   formatGenre(gen, array) {
@@ -75,4 +87,52 @@ export class TvshowDetailPage {
     );
   }
 
+  toggleFavorite(movie) {
+    if (this.favorite) {
+      this.unfavoriteItem(movie)
+    } else {
+      this.favoriteItem(movie);
+    }
+  }
+
+  public favoriteItem(item) {
+    this.settings.getAllFavorites('shows')
+      .then(response => {
+        if (response != null) {
+          let match = response.filter(value => value._id == item._id);
+          if (match.length == 0) {
+            response.push(item);
+            this.settings.setFavorites('shows', response)
+              .then(() => {
+                this.favorite = true;
+              });
+          } else {
+            this.favorite = true;
+          }
+        } else {
+          let favorites = [];
+          favorites.push(item);
+          this.settings.setFavorites('shows', favorites)
+            .then(() => {
+              this.favorite = true;
+            });
+        }
+      });
+  }
+
+  public unfavoriteItem(item) {
+    this.settings.getAllFavorites('shows')
+      .then(response => {
+        let match = response.filter(value => value._id == item._id);
+        if (match.length > 0) {
+          let mapped = response.filter(map => map._id != item._id);
+          this.settings.setFavorites('shows', mapped)
+            .then(() => {
+              this.favorite = false;
+            });
+        } else {
+          this.favorite = false;
+        }
+      });
+  }
 }

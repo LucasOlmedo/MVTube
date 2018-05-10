@@ -22,6 +22,7 @@ export class AnimeDetailPage {
   episodes: any;
   timestamp: any;
   animeimage: string;
+  favorite: boolean = false;
 
   constructor(
     public navParams: NavParams,
@@ -37,6 +38,17 @@ export class AnimeDetailPage {
       this.anime.num_seasons
     );
     this.animeimage = `https://media.kitsu.io/anime/cover_images/${this.anime._id}/original.jpg?${this.timestamp}`;
+    this.settings.getAllFavorites('animes')
+      .then(response => {
+        if (response != null) {
+          let match = response.filter(item => item._id == this.anime._id);
+          if (match.length > 0) {
+            this.favorite = true;
+          } else {
+            this.favorite = false;
+          }
+        }
+      });
   }
 
   formatGenre(gen, array) {
@@ -71,4 +83,52 @@ export class AnimeDetailPage {
     );
   }
 
+  toggleFavorite(anime) {
+    if (this.favorite) {
+      this.unfavoriteItem(anime)
+    } else {
+      this.favoriteItem(anime);
+    }
+  }
+
+  public favoriteItem(item) {
+    this.settings.getAllFavorites('animes')
+      .then(response => {
+        if (response != null) {
+          let match = response.filter(value => value._id == item._id);
+          if (match.length == 0) {
+            response.push(item);
+            this.settings.setFavorites('animes', response)
+              .then(() => {
+                this.favorite = true;
+              });
+          } else {
+            this.favorite = true;
+          }
+        } else {
+          let favorites = [];
+          favorites.push(item);
+          this.settings.setFavorites('animes', favorites)
+            .then(() => {
+              this.favorite = true;
+            });
+        }
+      });
+  }
+
+  public unfavoriteItem(item) {
+    this.settings.getAllFavorites('animes')
+      .then(response => {
+        let match = response.filter(value => value._id == item._id);
+        if (match.length > 0) {
+          let mapped = response.filter(map => map._id != item._id);
+          this.settings.setFavorites('animes', mapped)
+            .then(() => {
+              this.favorite = false;
+            });
+        } else {
+          this.favorite = false;
+        }
+      });
+  }
 }
