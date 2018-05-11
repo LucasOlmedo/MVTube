@@ -50,6 +50,13 @@
   "FAVORITE_PAGE": {
     "PAGE_TITLE": "Favorites"
   },
+  "TORRENT_PAGE": {
+    "PAGE_TITLE": "Play Now",
+    "QUALITY": "Quality",
+    "SUBTITLE": "Subtitle",
+    "PLAY": "Play",
+    "DOWNLOAD": "Download"
+  },
   "EPISODES": {
     "SEASON": "Season"
   },
@@ -116,7 +123,7 @@
         "WAR": "War",
         "WESTERN": "Western"
       },
-      "ANIME" : {
+      "ANIME": {
         "ACTION": "Action",
         "ECCHI": "Ecchi",
         "HAREM": "Harem",

@@ -34,6 +34,7 @@ import { File } from '@ionic-native/file';
 import { FileTransfer } from '@ionic-native/file-transfer';
 import { Globalization } from "@ionic-native/globalization";
 import { SocialSharing } from '@ionic-native/social-sharing';
+import { TorrentModalPage } from '../pages/torrent-modal/torrent-modal';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -49,13 +50,14 @@ export function createTranslateLoader(http: HttpClient) {
     TvshowsPage,
     TrailerModal,
     SettingsPage,
+    FavoritePage,
     EpisodeDetails,
     MovieDetailPage,
     AnimeDetailPage,
     FilterModalPage,
     TvshowDetailPage,
+    TorrentModalPage,
     EpisodesComponent,
-    FavoritePage,
   ],
   imports: [
     BrowserModule,
@@ -86,6 +88,7 @@ export function createTranslateLoader(http: HttpClient) {
     AnimeDetailPage,
     FilterModalPage,
     TvshowDetailPage,
+    TorrentModalPage,
     EpisodesComponent,
   ],
   providers: [

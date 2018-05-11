@@ -1,0 +1,62 @@
+<div #torrent [class]="theme">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>
+        {{'TORRENT_PAGE.PAGE_TITLE' | translate}}
+      </ion-title>
+      <ion-buttons end margin-right>
+        <button ion-button (click)="dismiss()">
+          <ion-icon name="close"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content padding>
+    <ion-item-group inset>
+      <ion-item>
+        <ion-label>
+          {{'TORRENT_PAGE.QUALITY' | translate}}
+        </ion-label>
+        <ion-select [(ngModel)]="selectedTorrent" (ngModelChange)="setTorrent($event)">
+          <ion-option *ngFor="let tr of torrents" [value]="tr.quality" [selected]="tr.quality == '720p'">
+            {{tr.quality}}
+          </ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          {{'TORRENT_PAGE.SUBTITLE' | translate}}
+          <img src="{{flag}}" alt="-" width="30" float-right style="padding-top: 2px;">
+        </ion-label>
+        <ion-select [(ngModel)]="selectedSubtitle" (ngModelChange)="setSubtitle($event)">
+          <ion-option *ngFor="let sub of subtitles" [value]="sub.code" [selected]="sub.code == 'en'">
+            {{sub.lang}}
+          </ion-option>
+        </ion-select>
+      </ion-item>
+      <br>
+      <br>
+      <br>
+      <ion-row>
+        <ion-col text-center>
+          <small>{{torrentInfo}}</small>
+          <br>
+          <small>{{subInfo}}</small>
+        </ion-col>
+      </ion-row>
+      <br>
+      <ion-row>
+        <ion-col col-6>
+          <button ion-button block class="button-theme">
+            {{'TORRENT_PAGE.DOWNLOAD' | translate}}
+          </button>
+        </ion-col>
+        <ion-col col-6>
+          <button ion-button block class="button-theme">
+            {{'TORRENT_PAGE.PLAY' | translate}}
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-item-group>
+  </ion-content>
+</div>

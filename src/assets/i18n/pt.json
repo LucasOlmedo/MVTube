@@ -50,6 +50,13 @@
   "FAVORITE_PAGE": {
     "PAGE_TITLE": "Favoritos"
   },
+  "TORRENT_PAGE": {
+    "PAGE_TITLE": "Assistir Agora",
+    "QUALITY": "Qualidade",
+    "SUBTITLE": "Legenda",
+    "PLAY": "Assistir",
+    "DOWNLOAD": "Baixar"
+  },
   "EPISODES": {
     "SEASON": "Temporada"
   },
@@ -116,7 +123,7 @@
         "WAR": "Guerra",
         "WESTERN": "Ocidental"
       },
-      "ANIME" : {
+      "ANIME": {
         "ACTION": "Ação",
         "ECCHI": "Ecchi",
         "HAREM": "Harém",

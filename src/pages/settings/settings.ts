@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { SettingsProvider } from '../../providers/settings/settings';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { SUBTITLE_LANG } from '../../constants/api.constants';
 
 @IonicPage()
 @Component({
@@ -10,6 +11,7 @@ import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angu
 })
 export class SettingsPage {
 
+  flag: any;
   languages: any;
   selectedLang: any;
   selectedTheme: String;
@@ -30,6 +32,12 @@ export class SettingsPage {
           : this.selectedLang = this.settingsProvider.language;
 
         this.translate.use(this.selectedLang);
+        let lg = SUBTITLE_LANG.filter(item => item.code == value);
+        if (lg.length > 0) {
+          this.flag = lg[0].flag;
+        } else {
+          this.flag = 'https://restcountries.eu/data/usa.svg';
+        }
       });
     this.settingsProvider.getActiveTheme()
       .subscribe(value => this.selectedTheme = value);
@@ -46,6 +54,12 @@ export class SettingsPage {
   }
 
   applyLanguage($lang) {
+    let lg = SUBTITLE_LANG.filter(item => item.code == $lang);
+    if (lg.length > 0) {
+      this.flag = lg[0].flag;
+    } else {
+      this.flag = 'https://restcountries.eu/data/usa.svg';
+    }
     this.settingsProvider.setActiveLang($lang);
   }
 

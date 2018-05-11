@@ -375,3 +375,206 @@ export const FILTER = {
     genre: GENRE,
     order: ORDER,
 }
+
+export const SUBTITLE_LANG = [
+    {
+        lang: 'English',
+        code: 'en',
+        flag: 'https://restcountries.eu/data/usa.svg'
+    },
+    {
+        lang: 'Afrikaans',
+        code: 'af',
+        flag: 'https://restcountries.eu/data/zaf.svg'
+    },
+    {
+        lang: 'العربية',
+        code: 'ar',
+        flag: 'https://restcountries.eu/data/sau.svg'
+    },
+    {
+        lang: 'Български',
+        code: 'bg',
+        flag: 'https://restcountries.eu/data/bgr.svg'
+    },
+    {
+        lang: 'বাংলা',
+        code: 'bn',
+        flag: 'https://restcountries.eu/data/bgd.svg'
+    },
+    {
+        lang: 'Català',
+        code: 'ca',
+        flag: 'https://restcountries.eu/data/and.svg'
+    },
+    {
+        lang: 'Český',
+        code: 'cs',
+        flag: 'https://restcountries.eu/data/cze.svg'
+    },
+    {
+        lang: 'Dansk',
+        code: 'da',
+        flag: 'https://restcountries.eu/data/dnk.svg'
+    },
+    {
+        lang: 'Deutsch',
+        code: 'de',
+        flag: 'https://restcountries.eu/data/deu.svg'
+    },
+    {
+        lang: 'Ελληνικά',
+        code: 'el',
+        flag: 'https://restcountries.eu/data/grc.svg'
+    },
+    {
+        lang: 'Español',
+        code: 'es',
+        flag: 'https://restcountries.eu/data/esp.svg'
+    },
+    {
+        lang: 'Eesti',
+        code: 'et',
+        flag: 'https://restcountries.eu/data/est.svg'
+    },
+    {
+        lang: 'فارسی',
+        code: 'fa',
+        flag: 'https://restcountries.eu/data/irn.svg'
+    },
+    {
+        lang: 'Suomi',
+        code: 'fi',
+        flag: 'https://restcountries.eu/data/fin.svg'
+    },
+    {
+        lang: 'Français',
+        code: 'fr',
+        flag: 'https://restcountries.eu/data/fra.svg'
+    },
+    {
+        lang: 'עברית',
+        code: 'he',
+        flag: 'https://restcountries.eu/data/isr.svg'
+    },
+    {
+        lang: 'Hrvatski',
+        code: 'hr',
+        flag: 'https://restcountries.eu/data/hrv.svg'
+    },
+    {
+        lang: 'Magyar',
+        code: 'hu',
+        flag: 'https://restcountries.eu/data/hun.svg'
+    },
+    {
+        lang: 'Bahasa Indonesia',
+        code: 'id',
+        flag: 'https://restcountries.eu/data/idn.svg'
+    },
+    {
+        lang: 'Íslenska',
+        code: 'is',
+        flag: 'https://restcountries.eu/data/isl.svg'
+    },
+    {
+        lang: 'Italiano',
+        code: 'it',
+        flag: 'https://restcountries.eu/data/ita.svg'
+    },
+    {
+        lang: '日本語',
+        code: 'ja',
+        flag: 'https://restcountries.eu/data/jpn.svg'
+    },
+    {
+        lang: '한국어',
+        code: 'ko',
+        flag: 'https://restcountries.eu/data/kor.svg'
+    },
+    {
+        lang: 'lietuvių kalba',
+        code: 'lt',
+        flag: 'https://restcountries.eu/data/ltu.svg'
+    },
+    {
+        lang: 'македонски јазик',
+        code: 'mk',
+        flag: 'https://restcountries.eu/data/mkd.svg'
+    },
+    {
+        lang: 'بهاس ملايو',
+        code: 'ms',
+        flag: 'https://restcountries.eu/data/sgp.svg'
+    },
+    {
+        lang: 'Norsk bokmål',
+        code: 'nb',
+        flag: 'https://restcountries.eu/data/nor.svg'
+    },
+    {
+        lang: 'Nederlands',
+        code: 'nl',
+        flag: 'https://restcountries.eu/data/nld.svg'
+    },
+    {
+        lang: 'Norsk nynorsk',
+        code: 'nn',
+        flag: 'https://restcountries.eu/data/bvt.svg'
+    },
+    {
+        lang: 'Polski',
+        code: 'pl',
+        flag: 'https://restcountries.eu/data/pol.svg'
+    },
+    {
+        lang: 'Português',
+        code: 'pt',
+        flag: 'https://restcountries.eu/data/bra.svg'
+    },
+    {
+        lang: 'română',
+        code: 'ro',
+        flag: 'https://restcountries.eu/data/rou.svg'
+    },
+    {
+        lang: 'русский язык',
+        code: 'ru',
+        flag: 'https://restcountries.eu/data/rus.svg'
+    },
+    {
+        lang: 'slovenčina',
+        code: 'sk',
+        flag: 'https://restcountries.eu/data/cze.svg'
+    },
+    {
+        lang: 'slovenščina',
+        code: 'sl',
+        flag: 'https://restcountries.eu/data/svn.svg'
+    },
+    {
+        lang: 'српски језик',
+        code: 'sr',
+        flag: 'https://restcountries.eu/data/srb.svg'
+    },
+    {
+        lang: 'svenska',
+        code: 'sv',
+        flag: 'https://restcountries.eu/data/swe.svg'
+    },
+    {
+        lang: 'Türkçe',
+        code: 'tr',
+        flag: 'https://restcountries.eu/data/tur.svg'
+    },
+    {
+        lang: 'українська',
+        code: 'uk',
+        flag: 'https://restcountries.eu/data/ukr.svg'
+    },
+    {
+        lang: '简体中文',
+        code: 'zh',
+        flag: 'https://restcountries.eu/data/chn.svg'
+    },
+];

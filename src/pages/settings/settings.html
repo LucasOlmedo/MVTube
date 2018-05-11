@@ -44,6 +44,7 @@
     <ion-item>
       <ion-label>
         {{'SETTINGS_PAGE.LANG_CHOOSE' | translate}}
+        <img src="{{flag}}" alt="-" width="30" float-right style="padding-top: 1px;">
       </ion-label>
       <ion-select [(ngModel)]="selectedLang" (ngModelChange)="applyLanguage($event)">
         <ion-option *ngFor="let lang of languages" [value]="lang.code" [selected]="lang.code == selectedLang">

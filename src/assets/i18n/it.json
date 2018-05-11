@@ -50,6 +50,13 @@
   "FAVORITE_PAGE": {
     "PAGE_TITLE": "Prediletto"
   },
+  "TORRENT_PAGE": {
+    "PAGE_TITLE": "Vedere Ora",
+    "QUALITY": "Qualità",
+    "SUBTITLE": "Etichetta",
+    "PLAY": "Riprodurre",
+    "DOWNLOAD": "Download"
+  },
   "EPISODES": {
     "SEASON": "Stagione"
   },
@@ -116,7 +123,7 @@
         "WAR": "Guerra",
         "WESTERN": "Occidentale"
       },
-      "ANIME" : {
+      "ANIME": {
         "ACTION": "Azione",
         "ECCHI": "Ecchi",
         "HAREM": "Harem",

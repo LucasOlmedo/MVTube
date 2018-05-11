@@ -4,6 +4,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { HelperProvider } from '../../providers/helper/helper';
 import { SettingsProvider } from '../../providers/settings/settings';
 import { IonicPage, NavController, NavParams, ModalController, ViewController } from 'ionic-angular';
+import { TorrentModalPage } from '../torrent-modal/torrent-modal';
 
 @IonicPage()
 @Component({
@@ -62,6 +63,15 @@ export class MovieDetailPage {
     trailerModal.present();
   }
 
+  showTorrent(torrents) {
+    let torrentModal = this.modal.create(TorrentModalPage, {
+      '720p': torrents.en['720p'],
+      '1080p': torrents.en['1080p'],
+      theme: this.selectedTheme
+    });
+    torrentModal.present();
+  }
+
   downloadImage(url) {
     this.helper.downloadImage(url);
   }
@@ -85,7 +95,7 @@ export class MovieDetailPage {
     }
   }
 
-  public favoriteItem(item) {
+  private favoriteItem(item) {
     this.settings.getAllFavorites('movies')
       .then(response => {
         if (response != null) {
@@ -110,7 +120,7 @@ export class MovieDetailPage {
       });
   }
 
-  public unfavoriteItem(item) {
+  private unfavoriteItem(item) {
     this.settings.getAllFavorites('movies')
       .then(response => {
         let match = response.filter(value => value._id == item._id);

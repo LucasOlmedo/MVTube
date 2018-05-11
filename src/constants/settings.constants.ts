@@ -4,7 +4,7 @@ export const availableLang = [
         name: 'English'
     },
     {
-        code: 'pt-br',
+        code: 'pt',
         name: 'Português'
     },
     {
