@@ -35,6 +35,7 @@ import { FileTransfer } from '@ionic-native/file-transfer';
 import { Globalization } from "@ionic-native/globalization";
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { TorrentModalPage } from '../pages/torrent-modal/torrent-modal';
+import { StreamingMedia } from '@ionic-native/streaming-media';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -98,6 +99,7 @@ export function createTranslateLoader(http: HttpClient) {
     FileTransfer,
     Globalization,
     SocialSharing,
+    StreamingMedia,
     HelperProvider,
     URLSearchParams,
     SettingsProvider,

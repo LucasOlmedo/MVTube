@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { SUBTITLE_LANG } from '../../constants/api.constants';
+import { StreamingMedia } from '@ionic-native/streaming-media';
 import { SettingsProvider } from '../../providers/settings/settings';
+import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -24,6 +25,7 @@ export class TorrentModalPage {
     params: NavParams,
     domSanitizer: DomSanitizer,
     private view: ViewController,
+    private streaming: StreamingMedia,
     private settings: SettingsProvider,
   ) {
     this.theme = params.get('theme');
@@ -43,6 +45,7 @@ export class TorrentModalPage {
   }
 
   setTorrent($event) {
+    this.selectedTorrent = $event;
     let selected = this.torrents.filter(item => item.quality == $event);
     this.torrentInfo = `${this.settings.instantTranslate('TORRENT_PAGE.QUALITY')}: ${$event} - ${selected[0].obj.filesize}`;
   }
@@ -52,6 +55,14 @@ export class TorrentModalPage {
     this.selectedSubtitle = selected[0].code;
     this.flag = selected[0].flag;
     this.subInfo = `${this.settings.instantTranslate('TORRENT_PAGE.SUBTITLE')}: ${selected[0].lang}`;
+  }
+
+  playTorrent() {
+    let torrent = this.torrents.filter(item => item.quality == this.selectedTorrent);
+    let url = torrent[0].obj.url;
+    this.streaming.playVideo(url, {
+      orientation: 'landscape'
+    });
   }
 
   dismiss() {
